@@ -1,0 +1,177 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="导入模体数据 在 系统 设置- 模体 管理 中，点 导入，命名 ，选择模体数据路径，选模体数据， 导入 为模体设置参数 ，包括： 添加电子密度表 添加外轮廓结构等ROI 添加治疗床结构 添加POI，包括Setup点，ISO点 工具栏支持自定义 应用模体 模体类型有三种：Phantom，Fixation，Support，通过S P F标签标识 模体状态有三种：已应用，未应用，停用。 Note: ..."/><meta name="DC.rights.owner" content="(C) Copyright 2024"/><meta name="copyright" content="(C) Copyright 2024"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="task"/><meta name="DC.relation" content="tds_i00.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="tds_i06"/><title>创建QA模体</title><!--  Generated with Oxygen version 24.1, build number 2022041502.  --><meta name="wh-path2root" content=""/><meta name="wh-toc-id" content="tds_i06-d1213e1591"/><meta name="wh-source-relpath" content="../Web版文档R1510/tds_i06.xml"/><meta name="wh-out-relpath" content="tds_i06.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="./oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/app/topic-page.css?buildId=2022041502"/>
+    
+    
+    <script src="./oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="./oxygen-webhelp/app/topic-page.js" src="./oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/oxygen.css?buildId=2022041502"/><link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/notes.css?buildId=2022041502"/></head>
+
+    <body id="tds_i06" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="index.html" class=" wh_logo d-none d-sm-block "><img src="Logo.png" alt="Web-Help"/></a>
+                    <div class=" wh_publication_title "><a href="index.html"><span class="title">Web-Help</span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="v00-d1213e11-mi" data-tocid="v00-d1213e11" data-state="not-ready" class=" topicref " data-id="v00"><span class="title"><a href="v00.html">视频指南</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="ois_a00-d1213e243-mi" data-tocid="ois_a00-d1213e243" data-state="not-ready" class=" topicref " data-id="ois_a00"><span class="title"><a href="ois_a00.html">系统登录</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="ois_b00-d1213e337-mi" data-tocid="ois_b00-d1213e337" data-state="not-ready" class=" topicref " data-id="ois_b00"><span class="title"><a href="ois_b00.html">DICOM导入导出</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="ois_000-d1213e423-mi" data-tocid="ois_000-d1213e423" data-state="not-ready" class=" topicref " data-id="ois_000"><span class="title"><a href="ois_000.html">OIS系统</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_a00-d1213e636-mi" data-tocid="tps_a00-d1213e636" data-state="not-ready" class=" topicref " data-id="tps_a00"><span class="title"><a href="tps_a00.html">勾画</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_b00-d1213e872-mi" data-tocid="tps_b00-d1213e872" data-state="not-ready" class=" topicref " data-id="tps_b00"><span class="title"><a href="tps_b00.html">图像配准与融合</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_c00-d1213e1041-mi" data-tocid="tps_c00-d1213e1041" data-state="not-ready" class=" topicref " data-id="tps_c00"><span class="title"><a href="tps_c00.html">计划设计</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_e00-d1213e1317-mi" data-tocid="tps_e00-d1213e1317" data-state="not-ready" class=" topicref " data-id="tps_e00"><span class="title"><a href="tps_e00.html">计划评估</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="rvs_a00-d1213e1419-mi" data-tocid="rvs_a00-d1213e1419" data-state="not-ready" class=" topicref " data-id="rvs_a00"><span class="title"><a href="rvs_a00.html">RVS系统</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tds_b00-d1213e1581-mi" data-tocid="tds_b00-d1213e1581" data-state="not-ready" class=" topicref " data-id="tds_b00"><span class="title"><a href="tds_i00.html">计划QA</a></span></span></li><li role="menuitem"><span id="tools-d1213e1633-mi" data-tocid="tools-d1213e1633" data-state="leaf" class=" topicref " data-id="tools"><span class="title"><a href="tools.html">工具和文档</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="tds_b00"><div class="title"><a href="tds_i00.html">计划QA</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li class="active"><div class="topicref" data-id="tds_i06"><div class="title"><a href="tds_i06.html">创建QA模体</a></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tds_b00-d1213e1581" class="topicref" data-id="tds_b00" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tds_b00-d1213e1581-link" class="wh-expand-btn"></span><div class="title"><a href="tds_i00.html" id="tds_b00-d1213e1581-link">计划QA</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" class="active"><div data-tocid="tds_i06-d1213e1591" class="topicref" data-id="tds_i06" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tds_i06.html" id="tds_i06-d1213e1591-link">创建QA模体</a></div></div></li><li role="treeitem"><div data-tocid="tds_b01-d1213e1599" class="topicref" data-id="tds_b01" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tds_i01.html" id="tds_b01-d1213e1599-link">模体计划验证</a></div></div></li><li role="treeitem"><div data-tocid="tds_b01-d1213e1607" class="topicref" data-id="tds_b01" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tds_i03.html" id="tds_b01-d1213e1607-link">治疗前平板计划验证（EPID QA）</a></div></div></li><li role="treeitem"><div data-tocid="tds_b01-d1213e1615" class="topicref" data-id="tds_b01" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tds_i02.html" id="tds_b01-d1213e1615-link">Auto EPID QA</a></div></div></li><li role="treeitem"><div data-tocid="tds_i07-d1213e1623" class="topicref" data-id="tds_i07" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tds_i07.html" id="tds_i07-d1213e1623-link">质控系统-计划质控</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">创建QA模体</h1>
+    <div class="- topic/body task/taskbody body taskbody">
+        <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="tds_i06__steps_vcc_drj_xwb" data-ofbid="tds_i06__steps_vcc_drj_xwb"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">导入模体数据</strong></span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                        在<strong class="+ topic/ph hi-d/b ph b">系统</strong><strong class="+ topic/ph hi-d/b ph b">设置-</strong><strong class="+ topic/ph hi-d/b ph b">模体</strong><strong class="+ topic/ph hi-d/b ph b">管理</strong>中，点<strong class="+ topic/ph hi-d/b ph b">导入，命名</strong>，选择模体数据路径，选模体数据，<strong class="+ topic/ph hi-d/b ph b">导入</strong><p class="- topic/p p"><img class="- topic/image image" id="tds_i06__image_hyp_5fl_4wb" src="TDS/QA%E6%A8%A1%E4%BD%93-%E5%AF%BC%E5%85%A5%E6%A8%A1%E4%BD%931.png"/></p><p class="- topic/p p"><img class="- topic/image image" id="tds_i06__image_qhw_1gl_4wb" src="TDS/QA%E6%A8%A1%E4%BD%93-%E5%AF%BC%E5%85%A5%E6%A8%A1%E4%BD%932.png"/></p></div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">为模体设置参数</strong>，包括：</span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <ul class="- topic/ul ul" id="tds_i06__ul_m4y_p4j_xwb" data-ofbid="tds_i06__ul_m4y_p4j_xwb">
+                        <li class="- topic/li li">添加电子密度表</li>
+                        <li class="- topic/li li">添加外轮廓结构等ROI</li>
+                        <li class="- topic/li li">添加治疗床结构</li>
+                        <li class="- topic/li li">添加POI，包括Setup点，ISO点</li>
+                    </ul>
+                </div>
+                <div class="- topic/itemgroup task/info itemgroup info">工具栏支持自定义</div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">应用模体</strong></span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <p class="- topic/p p"><img class="- topic/image image" id="tds_i06__image_lhm_pgl_4wb" src="TDS/QA%E6%A8%A1%E4%BD%93-%E5%BA%94%E7%94%A8%E6%A8%A1%E4%BD%93.png"/></p>
+                </div>
+                <div class="- topic/itemgroup task/info itemgroup info">模体类型有三种：Phantom，Fixation，Support，通过S P F标签标识</div>
+                <div class="- topic/itemgroup task/info itemgroup info">模体状态有三种：已应用，未应用，停用。</div>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <div class="- topic/note note note note_note" id="tds_i06__note_qxs_dpj_xwb" data-ofbid="tds_i06__note_qxs_dpj_xwb"><span class="note__title">Note:</span> 每创建一个QA plan，则复制一套RTSS，挂在原始模体序列下，共用一套CT序列。</div>
+                </div>
+            </li></ol></section>
+    </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    本文档不可替代用户手册，由于版本和配置的差异可能存在与本文档描述不符的情况。本文档所涉及内容并非联影的承诺，可随时更改，恕不另行通知。由于描述性偏颇或使用本文档发生的附带损失，联影概不承担任何责任。
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

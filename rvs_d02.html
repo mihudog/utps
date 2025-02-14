@@ -1,0 +1,170 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2024"/><meta name="copyright" content="(C) Copyright 2024"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="task"/><meta name="description" content="uView4D用于离线查看IGRT配准效果和记录"/><meta name="DC.relation" content="rvs_d00.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="rvs_d02"/>        
+      <title>离线uView4D-IGRT结果查看</title><!--  Generated with Oxygen version 24.1, build number 2022041502.  --><meta name="wh-path2root" content=""/><meta name="wh-toc-id" content="rvs_d02-d1213e1545"/><meta name="wh-source-relpath" content="../Web版文档R1510/rvs_d02.xml"/><meta name="wh-out-relpath" content="rvs_d02.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="./oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/app/topic-page.css?buildId=2022041502"/>
+    
+    
+    <script src="./oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="./oxygen-webhelp/app/topic-page.js" src="./oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/oxygen.css?buildId=2022041502"/><link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/notes.css?buildId=2022041502"/></head>
+
+    <body id="rvs_d02" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="index.html" class=" wh_logo d-none d-sm-block "><img src="Logo.png" alt="Web-Help"/></a>
+                    <div class=" wh_publication_title "><a href="index.html"><span class="title">Web-Help</span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="v00-d1213e11-mi" data-tocid="v00-d1213e11" data-state="not-ready" class=" topicref " data-id="v00"><span class="title"><a href="v00.html">视频指南</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="ois_a00-d1213e243-mi" data-tocid="ois_a00-d1213e243" data-state="not-ready" class=" topicref " data-id="ois_a00"><span class="title"><a href="ois_a00.html">系统登录</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="ois_b00-d1213e337-mi" data-tocid="ois_b00-d1213e337" data-state="not-ready" class=" topicref " data-id="ois_b00"><span class="title"><a href="ois_b00.html">DICOM导入导出</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="ois_000-d1213e423-mi" data-tocid="ois_000-d1213e423" data-state="not-ready" class=" topicref " data-id="ois_000"><span class="title"><a href="ois_000.html">OIS系统</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_a00-d1213e636-mi" data-tocid="tps_a00-d1213e636" data-state="not-ready" class=" topicref " data-id="tps_a00"><span class="title"><a href="tps_a00.html">勾画</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_b00-d1213e872-mi" data-tocid="tps_b00-d1213e872" data-state="not-ready" class=" topicref " data-id="tps_b00"><span class="title"><a href="tps_b00.html">图像配准与融合</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_c00-d1213e1041-mi" data-tocid="tps_c00-d1213e1041" data-state="not-ready" class=" topicref " data-id="tps_c00"><span class="title"><a href="tps_c00.html">计划设计</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_e00-d1213e1317-mi" data-tocid="tps_e00-d1213e1317" data-state="not-ready" class=" topicref " data-id="tps_e00"><span class="title"><a href="tps_e00.html">计划评估</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="rvs_a00-d1213e1419-mi" data-tocid="rvs_a00-d1213e1419" data-state="not-ready" class=" topicref " data-id="rvs_a00"><span class="title"><a href="rvs_a00.html">RVS系统</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tds_b00-d1213e1581-mi" data-tocid="tds_b00-d1213e1581" data-state="not-ready" class=" topicref " data-id="tds_b00"><span class="title"><a href="tds_i00.html">计划QA</a></span></span></li><li role="menuitem"><span id="tools-d1213e1633-mi" data-tocid="tools-d1213e1633" data-state="leaf" class=" topicref " data-id="tools"><span class="title"><a href="tools.html">工具和文档</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="rvs_a00"><div class="title"><a href="rvs_a00.html">RVS系统</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li><div class="topicref" data-id="rvs_d00"><div class="title"><a href="rvs_d00.html">离线uView4D</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li class="active"><div class="topicref" data-id="rvs_d02"><div class="title"><a href="rvs_d02.html">离线uView4D-IGRT结果查看</a><div class="wh-tooltip"><p class="shortdesc">uView4D用于离线查看IGRT配准效果和记录</p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="rvs_a00-d1213e1419" class="topicref" data-id="rvs_a00" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action rvs_a00-d1213e1419-link" class="wh-expand-btn"></span><div class="title"><a href="rvs_a00.html" id="rvs_a00-d1213e1419-link">RVS系统</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="rvs_a01-d1213e1429" class="topicref" data-id="rvs_a01" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action rvs_a01-d1213e1429-link" class="wh-expand-btn"></span><div class="title"><a href="rvs_a01.html" id="rvs_a01-d1213e1429-link">计划管理</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="rvs_b00-d1213e1484" class="topicref" data-id="rvs_b00" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="rvs_b00.html" id="rvs_b00-d1213e1484-link">治疗排程</a><div class="wh-tooltip"><p class="shortdesc">在<span class="ph uicontrol">计划管理</span>批准过的射束组才可在<span class="ph uicontrol">治疗排程</span>模块做排程，排程后会自动同步到加速器端（TDA）。</p></div></div></div></li><li role="treeitem"><div data-tocid="rvs_c00-d1213e1501" class="topicref" data-id="rvs_c00" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="rvs_c00.html" id="rvs_c00-d1213e1501-link">治疗记录</a><div class="wh-tooltip"><p class="shortdesc">在加速器端实施治疗后，可在<span class="ph uicontrol">治疗记录</span>模块回顾治疗参数。具体模块包括：<span class="ph uicontrol">射野组</span>、<span class="ph uicontrol">治疗野</span>、<span class="ph uicontrol">成像野</span>等治疗详情</p></div></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="rvs_d00-d1213e1524" class="topicref" data-id="rvs_d00" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action rvs_d00-d1213e1524-link" class="wh-expand-btn"></span><div class="title"><a href="rvs_d00.html" id="rvs_d00-d1213e1524-link">离线uView4D</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="rvs_d01-d1213e1534" class="topicref" data-id="rvs_d01" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="rvs_d01.html" id="rvs_d01-d1213e1534-link">离线uView4D-界面展示</a><div class="wh-tooltip"><p class="shortdesc">进入模块后，系统自动加载IGRT历史中最新一次的记录</p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="rvs_d02-d1213e1545" class="topicref" data-id="rvs_d02" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="rvs_d02.html" id="rvs_d02-d1213e1545-link">离线uView4D-IGRT结果查看</a><div class="wh-tooltip"><p class="shortdesc">uView4D用于离线查看IGRT配准效果和记录</p></div></div></div></li><li role="treeitem"><div data-tocid="rvs_d04-d1213e1556" class="topicref" data-id="rvs_d04" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="rvs_d03.html" id="rvs_d04-d1213e1556-link">离线uView4D - 离线配准</a><div class="wh-tooltip"><p class="shortdesc">加载副图后，显示的是在线应用（或保存）后的配准结果，可根据需要再次进行配准</p></div></div></div></li><li role="treeitem"><div data-tocid="rvs_d02-d1213e1567" class="topicref" data-id="rvs_d02" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="rvs_d04.html" id="rvs_d02-d1213e1567-link">离线uView4D - IGRT历史记录查看</a><div class="wh-tooltip"><p class="shortdesc">进入离线uView4D后，在<span class="ph uicontrol">IGRT历史</span>模块查看过往的IGRT配准记录，并可通过双击指定记录加载图像数据。操作步骤如下：</p></div></div></div></li></ul></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">离线uView4D-IGRT结果查看</h1>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc">uView4D用于离线查看IGRT配准效果和记录</p>
+        <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">登陆放疗云，双击患者，选择进入<span class="+ topic/ph ui-d/uicontrol ph uicontrol">离线uView4D</span>模块</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">点击<span class="+ topic/ph ui-d/uicontrol ph uicontrol">日期</span>展开视图，以天为单位选择需要查看的记录</span>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">点击下拉列表，依次选择指定的<span class="+ topic/ph ui-d/uicontrol ph uicontrol">治疗分次</span>、<span class="+ topic/ph ui-d/uicontrol ph uicontrol">射束组</span>、<span class="+ topic/ph ui-d/uicontrol ph uicontrol">射束类型</span>、<span class="+ topic/ph ui-d/uicontrol ph uicontrol">射束ID</span>、<span class="+ topic/ph ui-d/uicontrol ph uicontrol">采图记录</span>以及<span class="+ topic/ph ui-d/uicontrol ph uicontrol">副图序列</span></span>
+                <div class="- topic/itemgroup task/info itemgroup info">
+                    <p class="- topic/p p"><img class="- topic/image image" id="rvs_d02__image_a3r_l3x_nwb" src="uView4D/IGRT%E7%BB%93%E6%9E%9C%E6%9F%A5%E7%9C%8B1.png" width="800"/></p>
+                </div>
+            </li><li class="- topic/li task/step li step">
+                <span class="- topic/ph task/cmd ph cmd">选中记录后，页面将自动加载主/副图数据，可以在右侧的参数栏查看该次IGRT的参数和配准记录</span>
+                <div class="- topic/itemgroup task/info itemgroup info">1）离线<span class="+ topic/ph ui-d/uicontrol ph uicontrol">可以查看</span>配准结果，但是<span class="+ topic/ph ui-d/uicontrol ph uicontrol">不能应用</span>，并可以对在线的配准结果进行<span class="+ topic/ph ui-d/uicontrol ph uicontrol">配准或拒绝</span></div>
+                <div class="- topic/itemgroup task/info itemgroup info">2）<span class="+ topic/ph ui-d/uicontrol ph uicontrol">保存</span>保存当前的配准结果</div>
+                <div class="- topic/itemgroup task/info itemgroup info">3）<span class="+ topic/ph ui-d/uicontrol ph uicontrol">重置</span>将当前偏移量重置回记录值</div>
+                <div class="- topic/itemgroup task/info itemgroup info">4）<span class="+ topic/ph ui-d/uicontrol ph uicontrol">批准</span>批准当前的offset</div>
+                <div class="- topic/itemgroup task/info itemgroup info">5）<span class="+ topic/ph ui-d/uicontrol ph uicontrol">拒绝</span>拒绝当前的offset，下次TDA执行该成像野时，操作者将收到提示<p class="- topic/p p"><img class="- topic/image image" id="rvs_d02__image_fzj_jkx_nwb" src="uView4D/IGRT%E7%BB%93%E6%9E%9C%E6%9F%A5%E7%9C%8B2.png"/></p></div>
+            </li></ol></section>
+    </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    本文档不可替代用户手册，由于版本和配置的差异可能存在与本文档描述不符的情况。本文档所涉及内容并非联影的承诺，可随时更改，恕不另行通知。由于描述性偏颇或使用本文档发生的附带损失，联影概不承担任何责任。
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

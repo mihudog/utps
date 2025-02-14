@@ -1,0 +1,631 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="主模块切换到 计划 模块（子模块也切换到计划列） 点击 添加计划 选择 机器 、 辐射类型 、 技术类型 、 算法 设置处方参数 点击 确定 Note: 如果勾选立体定向放射手术。则使用小野commission数据进行计算。 点击 添加射束 等中心选择 POI 或 ROI 这里的等中心特指计划中心 系统将计划中心和POI分离关联 等中心默认名称是“ 射束组名称 + _1 ” ..."/><meta name="DC.rights.owner" content="(C) Copyright 2024"/><meta name="copyright" content="(C) Copyright 2024"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="task"/><meta name="DC.relation" content="tps_c41.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="tps_c42"/><title>IMRT计划设计步骤</title><!--  Generated with Oxygen version 24.1, build number 2022041502.  --><meta name="wh-path2root" content=""/><meta name="wh-toc-id" content="tps_c42-d1213e1100"/><meta name="wh-source-relpath" content="../Web版文档R1510/tps_c42.xml"/><meta name="wh-out-relpath" content="tps_c42.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="./oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/app/topic-page.css?buildId=2022041502"/>
+    
+    
+    <script src="./oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="./oxygen-webhelp/app/topic-page.js" src="./oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/oxygen.css?buildId=2022041502"/><link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/notes.css?buildId=2022041502"/></head>
+
+    <body id="tps_c42" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="index.html" class=" wh_logo d-none d-sm-block "><img src="Logo.png" alt="Web-Help"/></a>
+                    <div class=" wh_publication_title "><a href="index.html"><span class="title">Web-Help</span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="v00-d1213e11-mi" data-tocid="v00-d1213e11" data-state="not-ready" class=" topicref " data-id="v00"><span class="title"><a href="v00.html">视频指南</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="ois_a00-d1213e243-mi" data-tocid="ois_a00-d1213e243" data-state="not-ready" class=" topicref " data-id="ois_a00"><span class="title"><a href="ois_a00.html">系统登录</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="ois_b00-d1213e337-mi" data-tocid="ois_b00-d1213e337" data-state="not-ready" class=" topicref " data-id="ois_b00"><span class="title"><a href="ois_b00.html">DICOM导入导出</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="ois_000-d1213e423-mi" data-tocid="ois_000-d1213e423" data-state="not-ready" class=" topicref " data-id="ois_000"><span class="title"><a href="ois_000.html">OIS系统</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_a00-d1213e636-mi" data-tocid="tps_a00-d1213e636" data-state="not-ready" class=" topicref " data-id="tps_a00"><span class="title"><a href="tps_a00.html">勾画</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_b00-d1213e872-mi" data-tocid="tps_b00-d1213e872" data-state="not-ready" class=" topicref " data-id="tps_b00"><span class="title"><a href="tps_b00.html">图像配准与融合</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_c00-d1213e1041-mi" data-tocid="tps_c00-d1213e1041" data-state="not-ready" class=" topicref " data-id="tps_c00"><span class="title"><a href="tps_c00.html">计划设计</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_e00-d1213e1317-mi" data-tocid="tps_e00-d1213e1317" data-state="not-ready" class=" topicref " data-id="tps_e00"><span class="title"><a href="tps_e00.html">计划评估</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="rvs_a00-d1213e1419-mi" data-tocid="rvs_a00-d1213e1419" data-state="not-ready" class=" topicref " data-id="rvs_a00"><span class="title"><a href="rvs_a00.html">RVS系统</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tds_b00-d1213e1581-mi" data-tocid="tds_b00-d1213e1581" data-state="not-ready" class=" topicref " data-id="tds_b00"><span class="title"><a href="tds_i00.html">计划QA</a></span></span></li><li role="menuitem"><span id="tools-d1213e1633-mi" data-tocid="tools-d1213e1633" data-state="leaf" class=" topicref " data-id="tools"><span class="title"><a href="tools.html">工具和文档</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="tps_c00"><div class="title"><a href="tps_c00.html">计划设计</a></div></div></li><li><div class="topicref" data-id="tps_c41"><div class="title"><a href="tps_c41.html">IMRT计划设计</a></div></div></li><li class="active"><div class="topicref" data-id="tps_c42"><div class="title"><a href="tps_c42.html">IMRT计划设计步骤</a></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tps_c00-d1213e1041" class="topicref" data-id="tps_c00" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tps_c00-d1213e1041-link" class="wh-expand-btn"></span><div class="title"><a href="tps_c00.html" id="tps_c00-d1213e1041-link">计划设计</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="tps_c39-d1213e1049" class="topicref" data-id="tps_c39" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tps_c39-d1213e1049-link" class="wh-expand-btn"></span><div class="title"><a href="tps_c39.html" id="tps_c39-d1213e1049-link">计划前参数准备</a></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="tps_c41-d1213e1092" class="topicref" data-id="tps_c41" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tps_c41-d1213e1092-link" class="wh-expand-btn"></span><div class="title"><a href="tps_c41.html" id="tps_c41-d1213e1092-link">IMRT计划设计</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" class="active"><div data-tocid="tps_c42-d1213e1100" class="topicref" data-id="tps_c42" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_c42.html" id="tps_c42-d1213e1100-link">IMRT计划设计步骤</a></div></div></li><li role="treeitem"><div data-tocid="tps_c16-d1213e1108" class="topicref" data-id="tps_c16" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_c22.html" id="tps_c16-d1213e1108-link">添加Bolus</a></div></div></li><li role="treeitem"><div data-tocid="tps_c16-d1213e1116" class="topicref" data-id="tps_c16" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_c20.html" id="tps_c16-d1213e1116-link">uARC叶片序列化方式</a></div></div></li><li role="treeitem"><div data-tocid="tps_c16-d1213e1124" class="topicref" data-id="tps_c16" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_c45.html" id="tps_c16-d1213e1124-link">射束限制JawLimited</a></div></div></li><li role="treeitem"><div data-tocid="tps_c16-d1213e1132" class="topicref" data-id="tps_c16" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_c21.html" id="tps_c16-d1213e1132-link">uArc避开角度设置</a></div></div></li><li role="treeitem"><div data-tocid="tps_c38-d1213e1140" class="topicref" data-id="tps_c38" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_c38.html" id="tps_c38-d1213e1140-link">自动开野（扩展通量）</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="tps_c02-d1213e1150" class="topicref" data-id="tps_c02" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_c09.html" id="tps_c02-d1213e1150-link">附：优化约束函数-EUD</a></div></div></li><li role="treeitem"><div data-tocid="tps_c13-d1213e1158" class="topicref" data-id="tps_c13" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_c13.html" id="tps_c13-d1213e1158-link">附：MU/Dose Weight</a></div></div></li><li role="treeitem"><div data-tocid="tps_c27-d1213e1166" class="topicref" data-id="tps_c27" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_c27.html" id="tps_c27-d1213e1166-link">附：优化约束模版</a><div class="wh-tooltip"><p class="shortdesc">优化约束模板用于保存一组优化条件，调用模板可快速添加优化条件；在加载模板的窗口选择模板时会匹配ROI名称，如果不匹配，第一列会显示感叹号，支持当前ROI与模板中ROI进行手动匹配关联。保存和调用优化约束模板的步骤如图所示</p></div></div></div></li></ul></li><li role="treeitem"><div data-tocid="tps_d08-d1213e1177" class="topicref" data-id="tps_d08" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_d08.html" id="tps_d08-d1213e1177-link">3D-CRT计划设计步骤</a></div></div></li><li role="treeitem"><div data-tocid="tps_g01-d1213e1185" class="topicref" data-id="tps_g01" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_g01.html" id="tps_g01-d1213e1185-link">2D计划设计步骤</a></div></div></li><li role="treeitem"><div data-tocid="tps_f05-d1213e1193" class="topicref" data-id="tps_f05" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_f05.html" id="tps_f05-d1213e1193-link">Conformal Arc计划设计步骤</a></div></div></li><li role="treeitem"><div data-tocid="tps_c27-d1213e1201" class="topicref" data-id="tps_c27" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_c28.html" id="tps_c27-d1213e1201-link">背景剂量</a><div class="wh-tooltip"><p class="shortdesc">两个靶区同步照射，有共同的危及器官Lungs 和SpinalCord，可以放在同一个plan内，分两个射束组：Treat_食管 和         Treat_椎体</p></div></div></div></li><li role="treeitem"><div data-tocid="tps_c27-d1213e1212" class="topicref" data-id="tps_c27" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_c29.html" id="tps_c27-d1213e1212-link">推量计划</a><div class="wh-tooltip"><p class="shortdesc">举例：Treat_A：200cGy * 30次；Treat_B: 200cGy * 3次</p></div></div></div></li><li role="treeitem"><div data-tocid="tps_c40-d1213e1223" class="topicref" data-id="tps_c40" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_c40.html" id="tps_c40-d1213e1223-link">跨序列复制计划</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="tps_c16-d1213e1233" class="topicref" data-id="tps_c16" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_c24.html" id="tps_c16-d1213e1233-link">添加成像野</a><div class="wh-tooltip"><p class="shortdesc">成像野可在计划中添加，也可以在加速器控制端（TDA）的治疗模式下添加。两种方式添加的成像野都可以执行曝光。不同的是，在计划中添加成像野可以在报告中输出影像野DRR。</p></div></div></div></li><li role="treeitem"><div data-tocid="tps_c27-d1213e1244" class="topicref" data-id="tps_c27" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_c32.html" id="tps_c27-d1213e1244-link">射束模拟</a></div></div></li><li role="treeitem"><div data-tocid="tps_c43-d1213e1253" class="topicref" data-id="tps_c43" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_c43.html" id="tps_c43-d1213e1253-link">附：偏床治疗安全值</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="tps_c33-d1213e1263" class="topicref" data-id="tps_c33" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action tps_c33-d1213e1263-link" class="wh-expand-btn"></span><div class="title"><a href="tps_c33.html" id="tps_c33-d1213e1263-link">算法介绍</a></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">IMRT计划设计步骤</h1>
+    <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title2" id="tps_c02">
+        <h2 class="- topic/title title topictitle2" id="ariaid-title2">添加计划&amp;射束组</h2>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="tps_c02__steps_kg3_qpc_sxb" data-ofbid="tps_c02__steps_kg3_qpc_sxb"><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">主模块切换到<span class="+ topic/ph ui-d/uicontrol ph uicontrol">计划</span>模块（子模块也切换到计划列）</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">点击<span class="+ topic/ph ui-d/uicontrol ph uicontrol">添加计划</span></span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">选择<span class="+ topic/ph ui-d/uicontrol ph uicontrol">机器</span>、<span class="+ topic/ph ui-d/uicontrol ph uicontrol">辐射类型</span>、<span class="+ topic/ph ui-d/uicontrol ph uicontrol">技术类型</span>、<span class="+ topic/ph ui-d/uicontrol ph uicontrol">算法</span></span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">设置处方参数</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">点击<span class="+ topic/ph ui-d/uicontrol ph uicontrol">确定</span></span>
+                    <div class="- topic/itemgroup task/info itemgroup info">
+                        <p class="- topic/p p"><img class="- topic/image image" id="tps_c02__image_eyn_1sv_mwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E6%B7%BB%E5%8A%A0%E8%AE%A1%E5%88%92/%E6%B7%BB%E5%8A%A0%E8%AE%A1%E5%88%921.png"/></p>
+                    </div>
+                    <div class="- topic/itemgroup task/info itemgroup info">
+                        <div class="- topic/note note note note_note" id="tps_c02__note_vjr_pk4_dxb" data-ofbid="tps_c02__note_vjr_pk4_dxb"><span class="note__title">Note:</span> 如果勾选立体定向放射手术。则使用小野commission数据进行计算。</div>
+                    </div>
+                </li></ol></section>
+        </div>
+    </article>
+    <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title3" id="gv3_rpc_sxb">
+        <h2 class="- topic/title title topictitle2" id="ariaid-title3">添加射束</h2>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="gv3_rpc_sxb__steps_whh_rpc_sxb" data-ofbid="gv3_rpc_sxb__steps_whh_rpc_sxb"><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">点击<span class="+ topic/ph ui-d/uicontrol ph uicontrol">添加射束</span></span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">等中心选择<span class="+ topic/ph ui-d/uicontrol ph uicontrol">POI</span>或<span class="+ topic/ph ui-d/uicontrol ph uicontrol">ROI</span></span>
+                    <ol type="a" class="- topic/ol task/substeps ol substeps" id="gv3_rpc_sxb__substeps_lfw_msv_mwb" data-ofbid="gv3_rpc_sxb__substeps_lfw_msv_mwb">
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">这里的等中心特指计划中心</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">系统将计划中心和POI分离关联</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">等中心默认名称是“<span class="+ topic/ph ui-d/uicontrol ph uicontrol">射束组名称</span>+<span class="+ topic/ph ui-d/uicontrol ph uicontrol">_1</span>”</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">等中心可以通过POI或ROI获取坐标，如果改变POI坐标，等中心坐标不会关联变化</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">射束列表</span>中可以修改等中心的坐标</span>
+                        </li>
+                    </ol>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">设定<span class="+ topic/ph ui-d/uicontrol ph uicontrol">照射模式</span>和<span class="+ topic/ph ui-d/uicontrol ph uicontrol">剂量率</span></span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">设置各项机械参数</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">点击<span class="+ topic/ph ui-d/uicontrol ph uicontrol">OK</span></span>
+                    <div class="- topic/itemgroup task/info itemgroup info">
+                        <p class="- topic/p p"><img class="- topic/image image" id="gv3_rpc_sxb__image_bjt_mtv_mwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E6%B7%BB%E5%8A%A0%E5%B0%84%E6%9D%9F/%E6%B7%BB%E5%8A%A0%E5%B0%84%E6%9D%9F1.png"/></p>
+                    </div>
+                    <div class="- topic/itemgroup task/info itemgroup info">注：新增射束在BEV视图中显示闭合的透明MLC样式，如下图</div>
+                    <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" id="gv3_rpc_sxb__image_yy1_2qs_qxb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E6%B7%BB%E5%8A%A0%E5%B0%84%E6%9D%9F/%E6%96%B0%E5%A2%9E%E5%B0%84%E6%9D%9F%E7%9A%84BEV%E6%98%BE%E7%A4%BA.png"/></div>
+                </li></ol></section>
+        </div>
+        <article class="- topic/topic task/task topic task nested2" aria-labelledby="ariaid-title4" id="rmw_tpc_sxb">
+            <h3 class="- topic/title title topictitle3" id="ariaid-title4">修改射束（三种方法）</h3>
+            <div class="- topic/body task/taskbody body taskbody">
+                <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="rmw_tpc_sxb__steps_ez5_tpc_sxb" data-ofbid="rmw_tpc_sxb__steps_ez5_tpc_sxb"><li class="- topic/li task/step li step">
+                        <span class="- topic/ph task/cmd ph cmd">横截面图像上<span class="+ topic/ph ui-d/uicontrol ph uicontrol">右键</span>点击<span class="+ topic/ph ui-d/uicontrol ph uicontrol">旋转射束角度</span>，手动拖动射束角度</span>
+                        <div class="- topic/itemgroup task/info itemgroup info">
+                            <p class="- topic/p p"><img class="- topic/image image" id="rmw_tpc_sxb__image_bzc_mwv_mwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E4%BF%AE%E6%94%B9%E5%B0%84%E6%9D%9F/%E4%BF%AE%E6%94%B9%E5%B0%84%E6%9D%9F1.png"/></p>
+                        </div>
+                    </li><li class="- topic/li task/step li step">
+                        <span class="- topic/ph task/cmd ph cmd">选中射束，在计划列表框上方点击<span class="+ topic/ph ui-d/uicontrol ph uicontrol">编辑</span>按钮，在弹出的<span class="+ topic/ph ui-d/uicontrol ph uicontrol">编辑射束</span>窗口中修改射束机械参数</span>
+                        <div class="- topic/itemgroup task/info itemgroup info">
+                            <p class="- topic/p p"><img class="- topic/image image" id="rmw_tpc_sxb__image_wxm_fxv_mwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E4%BF%AE%E6%94%B9%E5%B0%84%E6%9D%9F/%E4%BF%AE%E6%94%B9%E5%B0%84%E6%9D%9F2.png"/></p>
+                        </div>
+                    </li><li class="- topic/li task/step li step">
+                        <span class="- topic/ph task/cmd ph cmd">切换到<span class="+ topic/ph ui-d/uicontrol ph uicontrol">射束列表-机械</span>，在其中修改射束机械参数</span>
+                        <div class="- topic/itemgroup task/info itemgroup info">
+                            <p class="- topic/p p"><img class="- topic/image image" id="rmw_tpc_sxb__image_ijm_hxv_mwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E4%BF%AE%E6%94%B9%E5%B0%84%E6%9D%9F/%E4%BF%AE%E6%94%B9%E5%B0%84%E6%9D%9F3.png"/></p>
+                        </div>
+                    </li></ol></section>
+            </div>
+        </article>
+        <article class="- topic/topic task/task topic task nested2" aria-labelledby="ariaid-title5" id="tps_c16">
+            <h3 class="- topic/title title topictitle3" id="ariaid-title5">射束模版</h3>
+            
+            <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc">射束模版用于保存一组射束参数，调用射束模版可以快速添加射束</p>
+                <section class="- topic/section task/context section context" id="tps_c16__context_g1k_2kc_5wb" data-ofbid="tps_c16__context_g1k_2kc_5wb"><p class="- topic/p p"><img class="- topic/image image" id="tps_c16__image_tnz_2mh_nwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E5%B0%84%E6%9D%9F%E6%A8%A1%E6%9D%BF/%E5%B0%84%E6%9D%9F%E6%A8%A1%E6%9D%BF1.png" height="500"/></p><img class="- topic/image image" id="tps_c16__image_dnh_ymh_nwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E5%B0%84%E6%9D%9F%E6%A8%A1%E6%9D%BF/%E5%B0%84%E6%9D%9F%E6%A8%A1%E6%9D%BF2.png" height="500"/><p class="- topic/p p">输入字符，支持模糊查找</p></section>
+            </div>
+        </article>
+        <article class="- topic/topic task/task topic task nested2" aria-labelledby="ariaid-title6" id="ktp_wpc_sxb">
+            <h3 class="- topic/title title topictitle3" id="ariaid-title6">编辑等中心</h3>
+            <div class="- topic/body task/taskbody body taskbody">
+                <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="ktp_wpc_sxb__steps_zbc_4ch_nwb" data-ofbid="ktp_wpc_sxb__steps_zbc_4ch_nwb"><li class="- topic/li task/step li step">
+                        <span class="- topic/ph task/cmd ph cmd">本系统中的等中心是计划中心，ISO点不再与计划直接关联。建议在添加射束时添加等中心点。</span>
+                    </li><li class="- topic/li task/step li step">
+                        <span class="- topic/ph task/cmd ph cmd">双击POI打开<span class="+ topic/ph ui-d/uicontrol ph uicontrol">编辑POI</span>窗口可用来编辑POI坐标（不推荐在POI列表添加等中心点）。</span>
+                    </li><li class="- topic/li task/step li step">
+                        <span class="- topic/ph task/cmd ph cmd">在<span class="+ topic/ph ui-d/uicontrol ph uicontrol">射束列表</span>里<span class="+ topic/ph ui-d/uicontrol ph uicontrol">编辑等中心</span>，可基于某个ISO点的坐标来生成等中心，也可以基于某个ROI来生成等中心，允许编辑等中心的坐标。支持通过修改偏移量或自动取整方式编辑等中心点坐标值。</span>
+                    </li><li class="- topic/li task/step li step">
+                        <span class="- topic/ph task/cmd ph cmd">如只在POI列表更改ISO点的位置，等中心位置不会自动关联更新，如需要等中心跟随ISO点，需要在编辑等中心界面做手动更新。</span>
+                        <div class="- topic/itemgroup task/info itemgroup info">
+                            <p class="- topic/p p"><img class="- topic/image image" id="ktp_wpc_sxb__image_x4l_n2h_nwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E7%BC%96%E8%BE%91%E7%AD%89%E4%B8%AD%E5%BF%83/%E7%BC%96%E8%BE%91%E7%AD%89%E4%B8%AD%E5%BF%831.png"/></p>
+                        </div>
+                    </li></ol></section>
+            </div>
+        </article>
+    </article>
+    <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title7" id="fwd_2qc_sxb">
+        <h2 class="- topic/title title topictitle2" id="ariaid-title7">添加优化约束</h2>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="fwd_2qc_sxb__steps_cjc_2qc_sxb" data-ofbid="fwd_2qc_sxb__steps_cjc_2qc_sxb"><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">切换到<span class="+ topic/ph ui-d/uicontrol ph uicontrol">优化约束</span></span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">点击<span class="+ topic/ph ui-d/uicontrol ph uicontrol">添加</span></span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">可选择的优化函数类型有</span>
+                    <ol type="a" class="- topic/ol task/substeps ol substeps" id="fwd_2qc_sxb__substeps_djc_2qc_sxb" data-ofbid="fwd_2qc_sxb__substeps_djc_2qc_sxb">
+                        <li class="- topic/li task/substep li substep substepexpand">
+                            <span class="- topic/ph task/cmd ph cmd">最小剂量</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep substepexpand">
+                            <span class="- topic/ph task/cmd ph cmd">最大剂量</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep substepexpand">
+                            <span class="- topic/ph task/cmd ph cmd">最小DVH</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep substepexpand">
+                            <span class="- topic/ph task/cmd ph cmd">最大DVH</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep substepexpand">
+                            <span class="- topic/ph task/cmd ph cmd">最小EUD</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep substepexpand">
+                            <span class="- topic/ph task/cmd ph cmd">最大EUD</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep substepexpand">
+                            <span class="- topic/ph task/cmd ph cmd">优化辅助环</span>
+                            <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" id="fwd_2qc_sxb__image_ysw_1j1_fxb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E6%B7%BB%E5%8A%A0%E4%BC%98%E5%8C%96%E7%BA%A6%E6%9D%9F/%E4%BC%98%E5%8C%96%E8%BE%85%E5%8A%A9%E7%8E%AF%E7%A4%BA%E6%84%8F%E5%9B%BE.png"/></div>
+                        </li>
+                        <li class="- topic/li task/substep li substep substepexpand">
+                            <span class="- topic/ph task/cmd ph cmd">单值约束</span>
+                        </li>
+                    </ol>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">权重</span>
+                    <ol type="a" class="- topic/ol task/substeps ol substeps" id="fwd_2qc_sxb__substeps_ejc_2qc_sxb" data-ofbid="fwd_2qc_sxb__substeps_ejc_2qc_sxb">
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">数值范围：1-10000</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">强约束1=弱约束100</span>
+                        </li>
+                    </ol>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">优化条件前面的勾选框选中表示该条件参与优化，不勾选表示不参与优化</span>
+                    <div class="- topic/itemgroup task/info itemgroup info">
+                        <p class="- topic/p p"><img class="- topic/image image" id="fwd_2qc_sxb__image_bn5_myv_mwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E6%B7%BB%E5%8A%A0%E4%BC%98%E5%8C%96%E7%BA%A6%E6%9D%9F/%E6%B7%BB%E5%8A%A0%E4%BC%98%E5%8C%96%E7%BA%A6%E6%9D%9F1.png"/></p>
+                    </div>
+                </li></ol></section>
+        </div>
+    </article>
+    <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title8" id="kgg_kqc_sxb">
+        <h2 class="- topic/title title topictitle2" id="ariaid-title8">优化设置与开始优化</h2>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="kgg_kqc_sxb__steps_gt2_kqc_sxb" data-ofbid="kgg_kqc_sxb__steps_gt2_kqc_sxb"><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">开始优化前可点击<span class="+ topic/ph ui-d/uicontrol ph uicontrol">优化设置</span>打开优化设置窗口</span>
+                    <ol type="a" class="- topic/ol task/substeps ol substeps" id="kgg_kqc_sxb__substeps_dx5_wrb_nwb" data-ofbid="kgg_kqc_sxb__substeps_dx5_wrb_nwb">
+                        <li class="- topic/li task/substep li substep substepexpand">
+                            <span class="- topic/ph task/cmd ph cmd">迭代次数越高，优化所需时长越长</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep substepexpand">
+                            <span class="- topic/ph task/cmd ph cmd">如果治疗技术为uarc，系统提供两种生成控制点的方法</span>
+                            <div class="- topic/itemgroup task/info itemgroup info">1） FMO（Fluence Map Optimization）</div>
+                            <div class="- topic/itemgroup task/info itemgroup info">2） SPO （Stochastic Platform Optimization)</div>
+                            <div class="- topic/itemgroup task/info itemgroup info">
+                                <p class="- topic/p p"><img class="- topic/image image" id="kgg_kqc_sxb__image_rj1_tsb_nwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E5%BC%80%E5%A7%8B%E4%BC%98%E5%8C%96/%E5%BC%80%E5%A7%8B%E4%BC%98%E5%8C%961.png"/></p>
+                            </div>
+                        </li>
+                        <li class="- topic/li task/substep li substep substepexpand">
+                            <span class="- topic/ph task/cmd ph cmd">如果治疗技术为dIMRT，系统支持调整最大子野个数和迭代次数。</span>
+                            <div class="- topic/itemgroup task/info itemgroup info">
+                                <div class="- topic/p p">
+                                    <img class="- topic/image image break" id="kgg_kqc_sxb__image_kgm_xp2_xwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E5%BC%80%E5%A7%8B%E4%BC%98%E5%8C%96/%E4%BC%98%E5%8C%96%E8%AE%BE%E7%BD%AE-DMLC.png"/>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="- topic/li task/substep li substep substepexpand">
+                            <span class="- topic/ph task/cmd ph cmd">如果治疗技术为sIMRT，还支持调整最小子野面积、最小子野MU、和最大子野个数。</span>
+                            <div class="- topic/itemgroup task/info itemgroup info">
+                                <div class="- topic/p p">
+                                    <img class="- topic/image image break" id="kgg_kqc_sxb__image_nzr_fs2_xwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E5%BC%80%E5%A7%8B%E4%BC%98%E5%8C%96/%E4%BC%98%E5%8C%96%E8%AE%BE%E7%BD%AE-sMLC.png"/>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">完成优化设置后，点击<span class="+ topic/ph ui-d/uicontrol ph uicontrol">开始优化</span>开始迭代优化</span>
+                    <ol type="a" class="- topic/ol task/substeps ol substeps" id="kgg_kqc_sxb__substeps_ofl_wsb_nwb" data-ofbid="kgg_kqc_sxb__substeps_ofl_wsb_nwb">
+                        <li class="- topic/li task/substep li substep substepexpand">
+                            <span class="- topic/ph task/cmd ph cmd">每轮优化结束后会自动进行最终剂量的计算，不需要再点计算！</span>
+                            <div class="- topic/itemgroup task/info itemgroup info">
+                                <p class="- topic/p p"><img class="- topic/image image" id="kgg_kqc_sxb__image_ctx_btb_nwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E5%BC%80%E5%A7%8B%E4%BC%98%E5%8C%96/%E5%BC%80%E5%A7%8B%E4%BC%98%E5%8C%962.png"/></p>
+                            </div>
+                        </li>
+                    </ol>
+                </li></ol></section>
+        </div>
+        <article class="- topic/topic task/task topic task nested2" aria-labelledby="ariaid-title9" id="nxm_nqc_sxb">
+            <h3 class="- topic/title title topictitle3" id="ariaid-title9">剂量网格</h3>
+            <div class="- topic/body task/taskbody body taskbody">
+                <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="nxm_nqc_sxb__steps_kkl_nqc_sxb" data-ofbid="nxm_nqc_sxb__steps_kkl_nqc_sxb"><li class="- topic/li task/step li step">
+                        <span class="- topic/ph task/cmd ph cmd">点击<span class="+ topic/ph ui-d/uicontrol ph uicontrol">显示剂量网格</span>可查看剂量网格覆盖的区域</span>
+                        <div class="- topic/itemgroup task/info itemgroup info"><p class="- topic/p p"><img class="- topic/image image" id="nxm_nqc_sxb__image_gcc_r1w_mwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E5%89%82%E9%87%8F%E7%BD%91%E7%BB%9C/%E5%89%82%E9%87%8F%E7%BD%91%E6%A0%BC1.png"/></p><img class="- topic/image image" id="nxm_nqc_sxb__image_ptg_t1w_mwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E5%89%82%E9%87%8F%E7%BD%91%E7%BB%9C/%E5%89%82%E9%87%8F%E7%BD%91%E6%A0%BC2.png"/></div>
+                    </li><li class="- topic/li task/step li step">
+                        <span class="- topic/ph task/cmd ph cmd">点击<span class="+ topic/ph ui-d/uicontrol ph uicontrol">网格设置</span>打开剂量网格设置</span>
+                        <ol type="a" class="- topic/ol task/substeps ol substeps" id="nxm_nqc_sxb__substeps_xc2_d1w_mwb" data-ofbid="nxm_nqc_sxb__substeps_xc2_d1w_mwb">
+                            <li class="- topic/li task/substep li substep substepexpand">
+                                <span class="- topic/ph task/cmd ph cmd">剂量网格尺寸默认为0.25-0.3cm（被图像层厚整除）</span>
+                            </li>
+                            <li class="- topic/li task/substep li substep substepexpand">
+                                <span class="- topic/ph task/cmd ph cmd">网格尺寸越小，分辨率越高，计算量越大，耗时越久</span>
+                            </li>
+                            <li class="- topic/li task/substep li substep substepexpand">
+                                <span class="- topic/ph task/cmd ph cmd">当剂量网格范围不能被剂量网格的尺寸整除时，系统将按照网格间距自动取整</span>
+                                <div class="- topic/itemgroup task/info itemgroup info">
+                                    <p class="- topic/p p"><img class="- topic/image image" id="nxm_nqc_sxb__image_mzk_v1w_mwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E5%89%82%E9%87%8F%E7%BD%91%E7%BB%9C/%E5%89%82%E9%87%8F%E7%BD%91%E6%A0%BC3.png"/></p>
+                                </div>
+                            </li>
+                        </ol>
+                    </li></ol></section>
+            </div>
+        </article>
+    </article>
+    <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title10" id="task_fx2_pqc_sxb">
+        <h2 class="- topic/title title topictitle2" id="ariaid-title10">评估计划</h2>
+        <article class="- topic/topic task/task topic task nested2" aria-labelledby="ariaid-title11" id="tps_e01">
+            <h3 class="- topic/title title topictitle3" id="ariaid-title11">等剂量线</h3>
+            <div class="- topic/body task/taskbody body taskbody">
+                <section class="- topic/ol task/steps ol steps"><div class="- topic/ol task/steps ol steps" id="tps_e01__steps_vr3_qqc_sxb" data-ofbid="tps_e01__steps_vr3_qqc_sxb"><div class="- topic/li task/step li step p">
+                        <span class="- topic/ph task/cmd ph cmd">在剂量阶梯上方打开等剂量设置</span>
+                        <ol type="a" class="- topic/ol task/substeps ol substeps" id="tps_e01__substeps_wr3_qqc_sxb" data-ofbid="tps_e01__substeps_wr3_qqc_sxb">
+                            <li class="- topic/li task/substep li substep substepexpand">
+                                <span class="- topic/ph task/cmd ph cmd">系统提供了2种剂量分级模式：相对模式和绝对模式</span>
+                                <div class="- topic/itemgroup task/info itemgroup info">相对与绝对等剂量线由100%剂量设定来转换，通常采用处方目标剂量作为100%等剂量线。</div>
+                            </li>
+                            <li class="- topic/li task/substep li substep substepexpand">
+                                <span class="- topic/ph task/cmd ph cmd">系统提供3种显示模式：Line、Band、Colorwash</span>
+                                <div class="- topic/itemgroup task/info itemgroup info">Band和Colorwash模式下可调节剂量填充显示的透明度。</div>
+                                <div class="- topic/itemgroup task/info itemgroup info">
+                                    <p class="- topic/p p"><img class="- topic/image image" id="tps_e01__image_rtn_nvb_nwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E5%89%82%E9%87%8F%E8%AF%84%E4%BC%B0/%E5%89%82%E9%87%8F%E8%AF%84%E4%BC%B01.png"/></p>
+                                </div>
+                                <div class="- topic/itemgroup task/info itemgroup info">
+                                    <p class="- topic/p p"><img class="- topic/image image" id="tps_e01__image_kxd_wvb_nwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E5%89%82%E9%87%8F%E8%AF%84%E4%BC%B0/%E5%89%82%E9%87%8F%E8%AF%84%E4%BC%B02.png"/></p>
+                                </div>
+                            </li>
+                            <li class="- topic/li task/substep li substep substepexpand">
+                                <span class="- topic/ph task/cmd ph cmd">支持等剂量线模板的选择、编辑、另存、删除以及设置默认等剂量线。</span>
+                            </li>
+                        </ol>
+                    </div></div></section>
+            </div>
+        </article>
+        <article class="- topic/topic task/task topic task nested2" aria-labelledby="ariaid-title12" id="uhn_rqc_sxb">
+            <h3 class="- topic/title title topictitle3" id="ariaid-title12">DVH和ROI统计</h3>
+            <article class="- topic/topic task/task topic task nested3" aria-labelledby="ariaid-title13" id="task_wsn_zpr_cxb">
+                <h4 class="- topic/title title topictitle4" id="ariaid-title13">DVH视图</h4>
+                
+                <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc">
+                    <img class="- topic/image image break" id="task_wsn_zpr_cxb__image_izg_hqr_cxb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E5%89%82%E9%87%8F%E8%AF%84%E4%BC%B0/DVH%E8%A7%86%E5%9B%BE.png"/>
+                </p>
+                    <section class="- topic/section task/context section context" id="task_wsn_zpr_cxb__context_mlv_fqr_cxb" data-ofbid="task_wsn_zpr_cxb__context_mlv_fqr_cxb">DVH视图具备以下常用功能：</section>
+                    <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="task_wsn_zpr_cxb__steps_otp_wrr_cxb" data-ofbid="task_wsn_zpr_cxb__steps_otp_wrr_cxb"><li class="- topic/li task/step li step">
+                            <span class="- topic/ph task/cmd ph cmd">点击1处可关闭可显示ROI的DVH曲线，支持全显示和全隐藏</span>
+                        </li><li class="- topic/li task/step li step">
+                            <span class="- topic/ph task/cmd ph cmd">点击2处可下拉选择ROI列表的排序方式，支持顺序、倒序、靶区优先、优化条件优先和ROI列表等多种排序方式</span>
+                        </li><li class="- topic/li task/step li step">
+                            <span class="- topic/ph task/cmd ph cmd">光标移到曲线上可测量该ROI的在该处的剂量和体积信息</span>
+                        </li><li class="- topic/li task/step li step">
+                            <span class="- topic/ph task/cmd ph cmd">滚动鼠标滚轮可缩放DVH视图，按住鼠标左右键可移动视图，点击重置可将DVH视图恢复到默认状态</span>
+                        </li><li class="- topic/li task/step li step">
+                            <span class="- topic/ph task/cmd ph cmd">点击5处眼睛可关闭或打开约束条件小箭头</span>
+                        </li><li class="- topic/li task/step li step">
+                            <span class="- topic/ph task/cmd ph cmd">点击刷新，可重新统计DVH数据，对于新增或编辑过的ROI，可不用重新计算剂量而得到更新后的DVH数据</span>
+                        </li><li class="- topic/li task/step li step">
+                            <span class="- topic/ph task/cmd ph cmd">支持将DVH数据和ROI统计数据导出未.json格式</span>
+                        </li></ol></section>
+                </div>
+            </article>
+            <article class="- topic/topic task/task topic task nested3" aria-labelledby="ariaid-title14" id="task_x3h_1qr_cxb">
+                <h4 class="- topic/title title topictitle4" id="ariaid-title14">ROI剂量统计</h4>
+                
+                <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"><img class="- topic/image image" id="task_x3h_1qr_cxb__image_umw_myb_nwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E5%89%82%E9%87%8F%E8%AF%84%E4%BC%B0/%E5%89%82%E9%87%8F%E8%AF%84%E4%BC%B03.png"/></p>
+                    <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="task_x3h_1qr_cxb__steps_fwh_bqr_cxb" data-ofbid="task_x3h_1qr_cxb__steps_fwh_bqr_cxb"><li class="- topic/li task/step li step">
+                            <span class="- topic/ph task/cmd ph cmd">点击信息栏的<span class="+ topic/ph ui-d/uicontrol ph uicontrol">ROI统计</span>-<span class="+ topic/ph ui-d/uicontrol ph uicontrol">剂量信息</span></span>
+                        </li><li class="- topic/li task/step li step">
+                            <span class="- topic/ph task/cmd ph cmd">列表中的结构和DVH上显示的ROI曲线对应。在DVH右侧的ROI列表中点选结构，相应ROI的剂量统计信息会同步出现在统计列表。</span>
+                        </li><li class="- topic/li task/step li step">
+                            <span class="- topic/ph task/cmd ph cmd">剂量信息统计表可设置D#%（百分比体积的剂量），D#cc（绝对体积的剂量），V#Gy（剂量体积）</span>
+                        </li><li class="- topic/li task/step li step">
+                            <span class="- topic/ph task/cmd ph cmd"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">+</span>和<span class="+ topic/ph ui-d/uicontrol ph uicontrol">-</span>可以增加和减少统计列</span>
+                        </li></ol></section>
+                </div>
+            </article>
+        </article>
+        <article class="- topic/topic task/task topic task nested2" aria-labelledby="ariaid-title15" id="ykd_tqc_sxb">
+            <h3 class="- topic/title title topictitle3" id="ariaid-title15">最大剂量点</h3>
+            <div class="- topic/body task/taskbody body taskbody">
+                <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="ykd_tqc_sxb__steps_uxb_tqc_sxb" data-ofbid="ykd_tqc_sxb__steps_uxb_tqc_sxb"><li class="- topic/li task/step li step">
+                        <span class="- topic/ph task/cmd ph cmd">在界面顶部工具栏选择<span class="+ topic/ph ui-d/uicontrol ph uicontrol">最大最小剂量</span></span>
+                    </li><li class="- topic/li task/step li step">
+                        <span class="- topic/ph task/cmd ph cmd">选择<span class="+ topic/ph ui-d/uicontrol ph uicontrol">最大剂量</span></span>
+                    </li><li class="- topic/li task/step li step">
+                        <span class="- topic/ph task/cmd ph cmd">选择<span class="+ topic/ph ui-d/uicontrol ph uicontrol">皮肤（skin）</span></span>
+                    </li><li class="- topic/li task/step li step">
+                        <span class="- topic/ph task/cmd ph cmd">点击<span class="+ topic/ph ui-d/uicontrol ph uicontrol">跳转</span>CT图上即会显示最大剂量点位置</span>
+                        <div class="- topic/itemgroup task/info itemgroup info">
+                            <p class="- topic/p p"><img class="- topic/image image" id="ykd_tqc_sxb__image_t44_kzb_nwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E5%89%82%E9%87%8F%E8%AF%84%E4%BC%B0/%E5%89%82%E9%87%8F%E8%AF%84%E4%BC%B04.png"/></p>
+                        </div>
+                    </li></ol></section>
+            </div>
+        </article>
+        <article class="- topic/topic task/task topic task nested2" aria-labelledby="ariaid-title16" id="tps_e10">
+            <h3 class="- topic/title title topictitle3" id="ariaid-title16">剂量剖面</h3>
+            
+            <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+                <section class="- topic/section task/context section context" id="tps_e10__context_jsr_5qc_sxb" data-ofbid="tps_e10__context_jsr_5qc_sxb">
+                    <div class="- topic/p p">
+                        <img class="- topic/image image break" id="tps_e10__image_cc5_5n2_xwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E5%89%82%E9%87%8F%E8%AF%84%E4%BC%B0/%E5%89%82%E9%87%8F%E5%89%96%E9%9D%A2.png"/>
+                    </div>
+                </section>
+                <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="tps_e10__steps_ksr_5qc_sxb" data-ofbid="tps_e10__steps_ksr_5qc_sxb"><li class="- topic/li task/step li step">
+                        <span class="- topic/ph task/cmd ph cmd">显示剂量剖面窗口后，点击<strong class="+ topic/ph hi-d/b ph b">剂量剖面</strong>按钮</span>
+                    </li><li class="- topic/li task/step li step">
+                        <span class="- topic/ph task/cmd ph cmd">在MPR平面上点一下确定剖线的起始位置，然后拖动光标到另一点再点一下生成剖线，期间会出现角度指示</span>
+                        <div class="- topic/itemgroup task/info itemgroup info">
+                            <p class="- topic/p p">MPR三个平面上分别做任意角度剖线，剂量剖面窗口对应显示剂量与距离的分布关系 </p>
+                        </div>
+                    </li><li class="- topic/li task/step li step">
+                        <span class="- topic/ph task/cmd ph cmd">对每条剖线统计多条剂量线，对应射束组的剂量和每个子野贡献的剂量，光标悬停在线上有相应提示</span>
+                    </li></ol></section>
+            </div>
+        </article>
+        <article class="- topic/topic task/task topic task nested2" aria-labelledby="ariaid-title17" id="c5b_wqc_sxb">
+            <h3 class="- topic/title title topictitle3" id="ariaid-title17">目标表和模版</h3>
+            <div class="- topic/body task/taskbody body taskbody">
+                <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="c5b_wqc_sxb__steps_sm3_lgh_nwb" data-ofbid="c5b_wqc_sxb__steps_sm3_lgh_nwb"><li class="- topic/li task/step li step">
+                        <span class="- topic/ph task/cmd ph cmd">目标表支持的目标类型分为</span>
+                        <ol type="a" class="- topic/ol task/substeps ol substeps" id="c5b_wqc_sxb__substeps_rg1_wqc_sxb" data-ofbid="c5b_wqc_sxb__substeps_rg1_wqc_sxb">
+                            <li class="- topic/li task/substep li substep">
+                                <span class="- topic/ph task/cmd ph cmd">体积剂量D#</span>
+                            </li>
+                            <li class="- topic/li task/substep li substep">
+                                <span class="- topic/ph task/cmd ph cmd">剂量体积V#</span>
+                            </li>
+                            <li class="- topic/li task/substep li substep">
+                                <span class="- topic/ph task/cmd ph cmd">最大剂量</span>
+                            </li>
+                            <li class="- topic/li task/substep li substep">
+                                <span class="- topic/ph task/cmd ph cmd">最小剂量</span>
+                            </li>
+                            <li class="- topic/li task/substep li substep">
+                                <span class="- topic/ph task/cmd ph cmd">平均剂量</span>
+                            </li>
+                        </ol>
+                    </li><li class="- topic/li task/step li step">
+                        <span class="- topic/ph task/cmd ph cmd">其中体积类型分为相对体积和绝对体积</span>
+                    </li><li class="- topic/li task/step li step">
+                        <span class="- topic/ph task/cmd ph cmd">添加目标表后可以从下图第7步看实际值是否达到目标值</span>
+                    </li><li class="- topic/li task/step li step">
+                        <span class="- topic/ph task/cmd ph cmd">目标表支持模版</span>
+                    </li><li class="- topic/li task/step li step">
+                        <span class="- topic/ph task/cmd ph cmd">添加目标表和保存模版的步骤如下图所示</span>
+                        <div class="- topic/itemgroup task/info itemgroup info">
+                            <p class="- topic/p p"><img class="- topic/image image" id="c5b_wqc_sxb__image_xjw_tlh_nwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E7%9B%AE%E6%A0%87%E8%A1%A8%E5%92%8C%E6%A8%A1%E6%9D%BF/%E7%9B%AE%E6%A0%87%E8%A1%A8%E5%92%8C%E6%A8%A1%E6%9D%BF1.png"/></p>
+                        </div>
+                    </li></ol></section>
+            </div>
+        </article>
+    </article>
+    <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title18" id="xs4_xqc_sxb">
+        <h2 class="- topic/title title topictitle2" id="ariaid-title18">根据目标值调参</h2>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="xs4_xqc_sxb__steps_jj3_rx3_xwb" data-ofbid="xs4_xqc_sxb__steps_jj3_rx3_xwb"><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">通过初步评估DVH和ROI剂量统计信息，调整优化条件</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">优化条件的目标值可为调整策略提供参考</span>
+                    <ol type="a" class="- topic/ol task/substeps ol substeps" id="xs4_xqc_sxb__substeps_kj3_rx3_xwb" data-ofbid="xs4_xqc_sxb__substeps_kj3_rx3_xwb">
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">目标值采用的是科学计数法</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">目标值越大，说明该条件对应的当前实际值距离设定的目标较远，该条件设定的太“苛刻”</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">目标值越小，说明对应的当前实际值距设定的目标较近，该条件设定的恰当</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">目标值为0，说明当前值已达到了目标，该条件设定的“宽松”，没有起作用</span>
+                        </li>
+                    </ol>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">根据目标值调整优化约束后，点击<span class="+ topic/ph ui-d/uicontrol ph uicontrol">继续优化</span></span>
+                    <div class="- topic/itemgroup task/info itemgroup info">
+                        <p class="- topic/p p"><img class="- topic/image image" id="xs4_xqc_sxb__image_fyd_f4g_nwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E7%BB%A7%E7%BB%AD%E4%BC%98%E5%8C%96/%E7%BB%A7%E7%BB%AD%E4%BC%98%E5%8C%961.png"/></p>
+                    </div>
+                </li></ol></section>
+        </div>
+    </article>
+    <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title19" id="hb5_1rc_sxb">
+        <h2 class="- topic/title title topictitle2" id="ariaid-title19">剂量阈值分割</h2>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="hb5_1rc_sxb__steps_tns_1rc_sxb" data-ofbid="hb5_1rc_sxb__steps_tns_1rc_sxb"><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">在ROI列表栏点<span class="+ topic/ph ui-d/uicontrol ph uicontrol">剂量分割</span></span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">填入积分剂量数值</span>
+                    <div class="- topic/itemgroup task/info itemgroup info"><span class="+ topic/ph ui-d/uicontrol ph uicontrol">-注意不要不要勾选剂量区间</span></div>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">设定ROI名称和角色</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">点击<span class="+ topic/ph ui-d/uicontrol ph uicontrol">OK</span></span>
+                    <div class="- topic/itemgroup task/info itemgroup info">
+                        <p class="- topic/p p"><img class="- topic/image image" id="hb5_1rc_sxb__image_mz4_rpg_nwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E5%89%82%E9%87%8F%E9%98%88%E5%80%BC%E5%88%86%E5%89%B2/%E5%89%82%E9%87%8F%E9%98%88%E5%80%BC%E5%88%86%E5%89%B21.png"/></p>
+                    </div>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">到<span class="+ topic/ph ui-d/uicontrol ph uicontrol">勾画界面</span>继续处理生成的ROI</span>
+                    <div class="- topic/itemgroup task/info itemgroup info">
+                        <p class="- topic/p p"><img class="- topic/image image" id="hb5_1rc_sxb__image_fkl_tpg_nwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E5%89%82%E9%87%8F%E9%98%88%E5%80%BC%E5%88%86%E5%89%B2/%E5%89%82%E9%87%8F%E9%98%88%E5%80%BC%E5%88%86%E5%89%B22.png"/></p>
+                    </div>
+                </li></ol></section>
+        </div>
+    </article>
+    <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title20" id="task_rpb_vx3_xwb">
+        <h2 class="- topic/title title topictitle2" id="ariaid-title20">继续优化</h2>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/ol task/steps ol steps"><div class="- topic/ol task/steps ol steps" id="task_rpb_vx3_xwb__steps_b3l_vx3_xwb" data-ofbid="task_rpb_vx3_xwb__steps_b3l_vx3_xwb"><div class="- topic/li task/step li step p">
+                    <span class="- topic/ph task/cmd ph cmd">在优化条件中添加新的结构，继续优化</span>
+                    <div class="- topic/itemgroup task/info itemgroup info">
+                        <p class="- topic/p p"><img class="- topic/image image" id="task_rpb_vx3_xwb__image_q5f_3tg_nwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E7%BB%A7%E7%BB%AD%E4%BC%98%E5%8C%96/%E7%BB%A7%E7%BB%AD%E4%BC%98%E5%8C%962.png"/></p>
+                    </div>
+                </div></div></section>
+        </div>
+    </article>
+    <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title21" id="pg2_zqc_sxb">
+        <h2 class="- topic/title title topictitle2" id="ariaid-title21">剂量归一</h2>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="pg2_zqc_sxb__steps_gtc_zqc_sxb" data-ofbid="pg2_zqc_sxb__steps_gtc_zqc_sxb"><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">在顶部工具栏选择<span class="+ topic/ph ui-d/uicontrol ph uicontrol">剂量归一</span></span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">三种归一方式</span>
+                    <ol type="a" class="- topic/ol task/substeps ol substeps" id="pg2_zqc_sxb__substeps_htc_zqc_sxb" data-ofbid="pg2_zqc_sxb__substeps_htc_zqc_sxb">
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">按处方归一 ：归一到当前处方</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">按ROI 归一 ：按ROI的平均值归一 或 按ROI的体积剂量归一</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">按POI归一</span>
+                        </li>
+                    </ol>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">点击<span class="+ topic/ph ui-d/uicontrol ph uicontrol">OK</span></span>
+                    <div class="- topic/itemgroup task/info itemgroup info">
+                        <p class="- topic/p p"><img class="- topic/image image" id="pg2_zqc_sxb__image_cys_1wg_nwb" src="%E8%AE%A1%E5%88%92%E8%AE%BE%E8%AE%A1/%E5%89%82%E9%87%8F%E5%BD%92%E4%B8%80/%E5%89%82%E9%87%8F%E5%BD%92%E4%B8%801.png"/></p>
+                    </div>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">归一改变的是所有子野的MU数，反映到TPS输出的结果上就是单次量的改变。归一比例最大<span class="+ topic/ph ui-d/uicontrol ph uicontrol">不可</span>超过当前值的<span class="+ topic/ph ui-d/uicontrol ph uicontrol">10%</span>，否则可能报错<span class="+ topic/ph ui-d/uicontrol ph uicontrol">MU与机架冲突</span>，导致计划无法被批准执行</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">若改变处方的分次量，应该重新做优化</span>
+                </li></ol></section>
+        </div>
+    </article>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="topic-item"><a href="#tps_c02" data-tocid="tps_c02">添加计划&amp;射束组</a></li><li class="topic-item"><a href="#gv3_rpc_sxb" data-tocid="gv3_rpc_sxb">添加射束</a><ul><li class="topic-item"><a href="#rmw_tpc_sxb" data-tocid="rmw_tpc_sxb">修改射束（三种方法）</a></li><li class="topic-item"><a href="#tps_c16" data-tocid="tps_c16">射束模版</a></li><li class="topic-item"><a href="#ktp_wpc_sxb" data-tocid="ktp_wpc_sxb">编辑等中心</a></li></ul></li><li class="topic-item"><a href="#fwd_2qc_sxb" data-tocid="fwd_2qc_sxb">添加优化约束</a></li><li class="topic-item"><a href="#kgg_kqc_sxb" data-tocid="kgg_kqc_sxb">优化设置与开始优化</a><ul><li class="topic-item"><a href="#nxm_nqc_sxb" data-tocid="nxm_nqc_sxb">剂量网格</a></li></ul></li><li class="topic-item"><a href="#task_fx2_pqc_sxb" data-tocid="task_fx2_pqc_sxb">评估计划</a><ul><li class="topic-item"><a href="#tps_e01" data-tocid="tps_e01">等剂量线</a></li><li class="topic-item"><a href="#uhn_rqc_sxb" data-tocid="uhn_rqc_sxb">DVH和ROI统计</a><ul><li class="topic-item"><a href="#task_wsn_zpr_cxb" data-tocid="task_wsn_zpr_cxb">DVH视图</a></li><li class="topic-item"><a href="#task_x3h_1qr_cxb" data-tocid="task_x3h_1qr_cxb">ROI剂量统计</a></li></ul></li><li class="topic-item"><a href="#ykd_tqc_sxb" data-tocid="ykd_tqc_sxb">最大剂量点</a></li><li class="topic-item"><a href="#tps_e10" data-tocid="tps_e10">剂量剖面</a></li><li class="topic-item"><a href="#c5b_wqc_sxb" data-tocid="c5b_wqc_sxb">目标表和模版</a></li></ul></li><li class="topic-item"><a href="#xs4_xqc_sxb" data-tocid="xs4_xqc_sxb">根据目标值调参</a></li><li class="topic-item"><a href="#hb5_1rc_sxb" data-tocid="hb5_1rc_sxb">剂量阈值分割</a></li><li class="topic-item"><a href="#task_rpb_vx3_xwb" data-tocid="task_rpb_vx3_xwb">继续优化</a></li><li class="topic-item"><a href="#pg2_zqc_sxb" data-tocid="pg2_zqc_sxb">剂量归一</a></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    本文档不可替代用户手册，由于版本和配置的差异可能存在与本文档描述不符的情况。本文档所涉及内容并非联影的承诺，可随时更改，恕不另行通知。由于描述性偏颇或使用本文档发生的附带损失，联影概不承担任何责任。
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

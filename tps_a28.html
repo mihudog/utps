@@ -1,0 +1,201 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="多视图浏览 ：2D模式下支持多视图浏览，可自由选择视图组合1x1-4x4，多视图中显示一个图像序列下的连续多层图像。 四视图浏览 ：2D模式下支持四视图浏览，可连续拖拽不同图像序列到不同视图窗口加载，对比浏览。支持同步滚动和缩放，平移操作。 删除图像序列 ：列表中选中图像序列，点击 删除序列 按钮，确认后删除。 删除图层 ：加载图像序列后，将横断面图层滚动到需要删除的层面，点击 删除层 ..."/><meta name="DC.rights.owner" content="(C) Copyright 2024"/><meta name="copyright" content="(C) Copyright 2024"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="task"/><meta name="DC.relation" content="tps_a00.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="tps_a28"/><title>图像浏览与处理</title><!--  Generated with Oxygen version 24.1, build number 2022041502.  --><meta name="wh-path2root" content=""/><meta name="wh-toc-id" content="tps_a28-d1213e695"/><meta name="wh-source-relpath" content="../Web版文档R1510/tps_a28.xml"/><meta name="wh-out-relpath" content="tps_a28.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="./oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/app/topic-page.css?buildId=2022041502"/>
+    
+    
+    <script src="./oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="./oxygen-webhelp/app/topic-page.js" src="./oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/oxygen.css?buildId=2022041502"/><link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/notes.css?buildId=2022041502"/></head>
+
+    <body id="tps_a28" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="index.html" class=" wh_logo d-none d-sm-block "><img src="Logo.png" alt="Web-Help"/></a>
+                    <div class=" wh_publication_title "><a href="index.html"><span class="title">Web-Help</span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="v00-d1213e11-mi" data-tocid="v00-d1213e11" data-state="not-ready" class=" topicref " data-id="v00"><span class="title"><a href="v00.html">视频指南</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="ois_a00-d1213e243-mi" data-tocid="ois_a00-d1213e243" data-state="not-ready" class=" topicref " data-id="ois_a00"><span class="title"><a href="ois_a00.html">系统登录</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="ois_b00-d1213e337-mi" data-tocid="ois_b00-d1213e337" data-state="not-ready" class=" topicref " data-id="ois_b00"><span class="title"><a href="ois_b00.html">DICOM导入导出</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="ois_000-d1213e423-mi" data-tocid="ois_000-d1213e423" data-state="not-ready" class=" topicref " data-id="ois_000"><span class="title"><a href="ois_000.html">OIS系统</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_a00-d1213e636-mi" data-tocid="tps_a00-d1213e636" data-state="not-ready" class=" topicref " data-id="tps_a00"><span class="title"><a href="tps_a00.html">勾画</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_b00-d1213e872-mi" data-tocid="tps_b00-d1213e872" data-state="not-ready" class=" topicref " data-id="tps_b00"><span class="title"><a href="tps_b00.html">图像配准与融合</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_c00-d1213e1041-mi" data-tocid="tps_c00-d1213e1041" data-state="not-ready" class=" topicref " data-id="tps_c00"><span class="title"><a href="tps_c00.html">计划设计</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_e00-d1213e1317-mi" data-tocid="tps_e00-d1213e1317" data-state="not-ready" class=" topicref " data-id="tps_e00"><span class="title"><a href="tps_e00.html">计划评估</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="rvs_a00-d1213e1419-mi" data-tocid="rvs_a00-d1213e1419" data-state="not-ready" class=" topicref " data-id="rvs_a00"><span class="title"><a href="rvs_a00.html">RVS系统</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tds_b00-d1213e1581-mi" data-tocid="tds_b00-d1213e1581" data-state="not-ready" class=" topicref " data-id="tds_b00"><span class="title"><a href="tds_i00.html">计划QA</a></span></span></li><li role="menuitem"><span id="tools-d1213e1633-mi" data-tocid="tools-d1213e1633" data-state="leaf" class=" topicref " data-id="tools"><span class="title"><a href="tools.html">工具和文档</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="tps_a00"><div class="title"><a href="tps_a00.html">勾画</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li class="active"><div class="topicref" data-id="tps_a28"><div class="title"><a href="tps_a28.html">图像浏览与处理</a></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tps_a00-d1213e636" class="topicref" data-id="tps_a00" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tps_a00-d1213e636-link" class="wh-expand-btn"></span><div class="title"><a href="tps_a00.html" id="tps_a00-d1213e636-link">勾画</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="tps_a01-d1213e646" class="topicref" data-id="tps_a01" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_a01.html" id="tps_a01-d1213e646-link">自定义工具栏</a><div class="wh-tooltip"><p class="shortdesc">         <br/><img src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B7%A5%E5%85%B7%E6%A0%8F.png" class="image"/><br/>     </p></div></div></div></li><li role="treeitem"><div data-tocid="tps_a13-d1213e659" class="topicref" data-id="tps_a13" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_a13.html" id="tps_a13-d1213e659-link">视窗基础操作</a><div class="wh-tooltip"><p class="shortdesc">         <br/><img src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/%E8%A7%86%E5%9B%BE%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C.png" class="image"/><br/>         <br/><img src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/%E5%9B%BE%E5%83%8F%E9%80%9A%E7%94%A8%E6%93%8D%E4%BD%9C%E5%BF%AB%E6%8D%B7%E9%94%AE.PNG" class="image"/><br/>     </p></div></div></div></li><li role="treeitem"><div data-tocid="tps_a27-d1213e674" class="topicref" data-id="tps_a27" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_a27.html" id="tps_a27-d1213e674-link">视图布局管理</a><div class="wh-tooltip"><p class="shortdesc">         <br/><img src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/%E4%B8%89%E8%A7%86%E7%AA%97%E5%B8%83%E5%B1%80.png" class="image"/><br/>         <br/><img src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/%E5%85%AD%E8%A7%86%E7%AA%97%E5%B8%83%E5%B1%80.png" class="image"/><br/>         <br/><img src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/%E8%A7%86%E7%AA%97%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86.png" class="image"/><br/>         <br/><img src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/%E8%A7%86%E7%AA%97%E5%B8%83%E5%B1%80%E5%A4%A7%E5%B0%8F%E8%B0%83%E8%8A%82.png" class="image"/><br/>         <br/><img src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/%E8%A7%86%E7%AA%97%E5%B8%83%E5%B1%80%E4%BD%8D%E7%BD%AE%E8%B0%83%E8%8A%82.png" class="image"/><br/>     </p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="tps_a28-d1213e695" class="topicref" data-id="tps_a28" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_a28.html" id="tps_a28-d1213e695-link">图像浏览与处理</a></div></div></li><li role="treeitem"><div data-tocid="tps_a01-d1213e703" class="topicref" data-id="tps_a01" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_a02.html" id="tps_a01-d1213e703-link">智能分割</a><div class="wh-tooltip"><p class="shortdesc">         <br/><img src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/%E6%99%BA%E8%83%BD%E5%88%86%E5%89%B2.png" class="image"/><br/>     </p></div></div></div></li><li role="treeitem"><div data-tocid="task_ehg_hxg_4wb-d1213e716" class="topicref" data-id="task_ehg_hxg_4wb" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_a03.html" id="task_ehg_hxg_4wb-d1213e716-link">添加ROI</a><div class="wh-tooltip"><p class="shortdesc">         <br/><img src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/%E6%B7%BB%E5%8A%A0ROI.png" class="image"/><br/>     </p></div></div></div></li><li role="treeitem"><div data-tocid="tps_a08-d1213e729" class="topicref" data-id="tps_a08" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_a08.html" id="tps_a08-d1213e729-link">ROI属性</a></div></div></li><li role="treeitem"><div data-tocid="tps_a01-d1213e737" class="topicref" data-id="tps_a01" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_a05.html" id="tps_a01-d1213e737-link">勾画工具</a><div class="wh-tooltip"><p class="shortdesc">在ROI列表选中激活状态下的ROI，选择如下工具进行手动勾画。</p></div></div></div></li><li role="treeitem"><div data-tocid="tps_a15-d1213e748" class="topicref" data-id="tps_a15" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_a15.html" id="tps_a15-d1213e748-link">函数运算</a><div class="wh-tooltip"><p class="shortdesc">         <br/><img src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/ROI%E5%8A%9F%E8%83%BD%E5%87%BD%E6%95%B0.png" class="image"/><br/>     </p></div></div></div></li><li role="treeitem"><div data-tocid="tps_a15-d1213e761" class="topicref" data-id="tps_a15" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_a14.html" id="tps_a15-d1213e761-link">外扩内缩</a><div class="wh-tooltip"><p class="shortdesc">         <br/><img src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/ROI%E7%BC%A9%E6%94%BE.png" class="image"/><br/>     </p></div></div></div></li><li role="treeitem"><div data-tocid="tps_a01-d1213e775" class="topicref" data-id="tps_a01" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_a07.html" id="tps_a01-d1213e775-link">ROI快捷缩放</a><div class="wh-tooltip"><p class="shortdesc">         <br/><img src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/ROI%E5%A4%96%E6%89%A9%E5%86%85%E7%BC%A9%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F.png" class="image"/><br/>     </p></div></div></div></li><li role="treeitem"><div data-tocid="tps_a01-d1213e788" class="topicref" data-id="tps_a01" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_a06.html" id="tps_a01-d1213e788-link">ROI快捷逻辑交互</a><div class="wh-tooltip"><p class="shortdesc">         <br/><img src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/ROI%E9%80%BB%E8%BE%91%E4%BA%A4%E4%BA%92.png" class="image"/><br/>     </p></div></div></div></li><li role="treeitem"><div data-tocid="tps_a08-d1213e801" class="topicref" data-id="tps_a08" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_a09.html" id="tps_a08-d1213e801-link">生成ROI模版</a><div class="wh-tooltip"><p class="shortdesc">         <br/><img src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/ROI%E6%A8%A1%E6%9D%BF.png" class="image"/><br/>     </p></div></div></div></li><li role="treeitem"><div data-tocid="tps_a08-d1213e814" class="topicref" data-id="tps_a08" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_a10.html" id="tps_a08-d1213e814-link">加载模版</a><div class="wh-tooltip"><p class="shortdesc">         <br/><img src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/%E8%B0%83%E7%94%A8ROI%E6%A8%A1%E6%9D%BF.png" class="image"/><br/>     </p></div></div></div></li><li role="treeitem"><div data-tocid="tps_a08-d1213e827" class="topicref" data-id="tps_a08" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_a11.html" id="tps_a08-d1213e827-link">ROI关联更新</a><div class="wh-tooltip"><p class="shortdesc">         <br/><img src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/ROI%E5%85%B3%E8%81%94%E6%9B%B4%E6%96%B0.png" class="image"/><br/>     </p></div></div></div></li><li role="treeitem"><div data-tocid="tps_a29-d1213e840" class="topicref" data-id="tps_a29" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_a29.html" id="tps_a29-d1213e840-link">脚本</a></div></div></li><li role="treeitem"><div data-tocid="tps_a26-d1213e848" class="topicref" data-id="tps_a26" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_a26.html" id="tps_a26-d1213e848-link">批准ROI与解除批准</a><div class="wh-tooltip"><p class="shortdesc">         <br/><img src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/%E6%89%B9%E5%87%86ROI.png" class="image"/><br/>     </p></div></div></div></li><li role="treeitem"><div data-tocid="tps_a30-d1213e861" class="topicref" data-id="tps_a30" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tps_a30.html" id="tps_a30-d1213e861-link">勾画QA</a><div class="wh-tooltip"><p class="shortdesc">执行勾画QA功能，可通过程序对勾画进行检查。</p></div></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">图像浏览与处理</h1>
+    <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title2" id="task_ln1_5p2_fxb">
+        <h2 class="- topic/title title topictitle2" id="ariaid-title2">图像浏览</h2>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/section task/context section context" id="task_ln1_5p2_fxb__context_gzx_5p2_fxb" data-ofbid="task_ln1_5p2_fxb__context_gzx_5p2_fxb"></section>
+            <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="task_ln1_5p2_fxb__steps_e35_vp2_fxb" data-ofbid="task_ln1_5p2_fxb__steps_e35_vp2_fxb"><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">多视图浏览</strong>：2D模式下支持多视图浏览，可自由选择视图组合1x1-4x4，多视图中显示一个图像序列下的连续多层图像。</span>
+                    <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" id="task_ln1_5p2_fxb__image_qxj_xp2_fxb" src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/%E5%BD%B1%E5%83%8F%E6%B5%8F%E8%A7%88%E4%B8%8E%E5%A4%84%E7%90%86/%E5%BD%B1%E5%83%8F%E6%B5%8F%E8%A7%881.png"/></div>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">四视图浏览</strong>：2D模式下支持四视图浏览，可连续拖拽不同图像序列到不同视图窗口加载，对比浏览。支持同步滚动和缩放，平移操作。</span>
+                    <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" id="task_ln1_5p2_fxb__image_lg5_yp2_fxb" src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/%E5%BD%B1%E5%83%8F%E6%B5%8F%E8%A7%88%E4%B8%8E%E5%A4%84%E7%90%86/%E5%BD%B1%E5%83%8F%E6%B5%8F%E8%A7%882.png"/></div>
+                </li></ol></section>
+        </div>
+    </article>
+    <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title3" id="task_qx2_4r2_fxb">
+        <h2 class="- topic/title title topictitle2" id="ariaid-title3">图像处理</h2>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/section task/context section context" id="task_qx2_4r2_fxb__context_sh2_pr2_fxb" data-ofbid="task_qx2_4r2_fxb__context_sh2_pr2_fxb">
+                <p class="- topic/p p"><img class="- topic/image image" id="task_qx2_4r2_fxb__image_gjf_sr2_fxb" src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/%E5%BD%B1%E5%83%8F%E6%B5%8F%E8%A7%88%E4%B8%8E%E5%A4%84%E7%90%86/%E5%BD%B1%E5%83%8F%E5%A4%84%E7%90%86.png"/></p>
+            </section>
+            <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="task_qx2_4r2_fxb__steps_v4n_pr2_fxb" data-ofbid="task_qx2_4r2_fxb__steps_v4n_pr2_fxb"><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">删除图像序列</strong>：列表中选中图像序列，点击<strong class="+ topic/ph hi-d/b ph b">删除序列</strong>按钮，确认后删除。</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">删除图层</strong>：加载图像序列后，将横断面图层滚动到需要删除的层面，点击<strong class="+ topic/ph hi-d/b ph b">删除层</strong>按钮，确认后删除。</span>
+                    <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" id="task_qx2_4r2_fxb__image_kwx_qr2_fxb" src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/%E5%BD%B1%E5%83%8F%E6%B5%8F%E8%A7%88%E4%B8%8E%E5%A4%84%E7%90%86/%E5%88%A0%E9%99%A4%E5%9B%BE%E5%B1%82.png"/></div>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">添加图层</strong>：加载图像序列后，点击<strong class="+ topic/ph hi-d/b ph b">添加层</strong>按钮，确认后在弹窗中确认添加层的方向和数量。</span>
+                    <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" id="task_qx2_4r2_fxb__image_n1m_gs2_fxb" src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/%E5%BD%B1%E5%83%8F%E6%B5%8F%E8%A7%88%E4%B8%8E%E5%A4%84%E7%90%86/%E6%B7%BB%E5%8A%A0%E5%9B%BE%E5%B1%82.png"/></div>
+                    <div class="- topic/itemgroup task/info itemgroup info">该功能将把顶部/底部的图层复制到顶部或底部，多用于为剂量计算增加散射图层。</div>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">创建分组</strong>：同一检查下的影像序列可添加到同一影像组中。</span>
+                    <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" id="task_qx2_4r2_fxb__image_mhy_qs2_fxb" src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/%E5%BD%B1%E5%83%8F%E6%B5%8F%E8%A7%88%E4%B8%8E%E5%A4%84%E7%90%86/%E5%88%9B%E5%BB%BA%E5%88%86%E7%BB%84.png"/></div>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">编辑分组</strong>：可将组内的序列移出组外。</span>
+                    <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" id="task_qx2_4r2_fxb__image_mky_ps2_fxb" src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/%E5%BD%B1%E5%83%8F%E6%B5%8F%E8%A7%88%E4%B8%8E%E5%A4%84%E7%90%86/%E7%BC%96%E8%BE%91%E5%88%86%E7%BB%84.png"/></div>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">创建投影序列</strong>：4DCT组内可通过点击<strong class="+ topic/ph hi-d/b ph b">创建投影序列</strong>按钮，创建平均密度投影（AIP），最大密度投影（MIP），最小密度投影（MinIP）。</span>
+                    <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" id="task_qx2_4r2_fxb__image_gff_252_fxb" src="%E5%8B%BE%E7%94%BB%E6%A8%A1%E5%9D%97/%E5%BD%B1%E5%83%8F%E6%B5%8F%E8%A7%88%E4%B8%8E%E5%A4%84%E7%90%86/%E5%88%9B%E5%BB%BA%E6%8A%95%E5%BD%B1.png"/></div>
+                </li></ol></section>
+        </div>
+    </article>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="topic-item"><a href="#task_ln1_5p2_fxb" data-tocid="task_ln1_5p2_fxb">图像浏览</a></li><li class="topic-item"><a href="#task_qx2_4r2_fxb" data-tocid="task_qx2_4r2_fxb">图像处理</a></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    本文档不可替代用户手册，由于版本和配置的差异可能存在与本文档描述不符的情况。本文档所涉及内容并非联影的承诺，可随时更改，恕不另行通知。由于描述性偏颇或使用本文档发生的附带损失，联影概不承担任何责任。
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

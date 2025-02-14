@@ -1,0 +1,1 @@
+define({"topics":[{"title":"查看患者流程进度与页面跳转","shortdesc":"<p class=\"shortdesc\">         <br\/><img class=\"image\" src=\"OIS%E7%B3%BB%E7%BB%9F\/%E6%82%A3%E8%80%85%E6%B5%81%E7%A8%8B\/%E6%B5%81%E7%A8%8B%E8%B7%B3%E8%BD%AC.png\"\/><br\/>     <\/p>","href":"ois_g01.html","attributes":{"data-id":"ois_g01"},"menu":{"hasChildren":false},"tocID":"ois_g01-d1213e602","topics":[]}]});
