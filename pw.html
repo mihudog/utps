@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>计划工作流程</title>
+	<style>
+		* {    
+            margin: 0;    
+            padding: 0;    
+            box-sizing: border-box;    
+        }    
+		body{
+			display:flex;
+			font-family:"Helvetica Neue",Arial,sans-serif;
+            background-color: #f4f4f4;    
+            color: #333;    
+		}
+		.sidebar{
+			width:20%;
+			background:linear-gradient(135deg, #1e3c72, #2a5298);   
+			color: #fff;
+			padding:10px;
+			height:100vh;
+			box-shadow:2px 0 5px rgba(0,0,0,0.1);
+			overflow-y: auto;
+			position: fixed;
+		}
+		.sidebar h1{
+			font-size: 24px;
+			margin-bottom: 20px;
+			text-align: center;
+			border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+			padding-bottom: 10px;
+		}
+		.sidebar h2{
+			font-size: 18px;
+			margin: 15px 0 5px 0;
+		}
+		.sidebar h3{
+			font-size: 16px;
+			margin: 15px 0 5px 20;
+		}
+		.sidebar a {
+			text-decoration:none;
+			color:#a8d0e6;
+			transition: color 0.3s,backgroud 0.3s;
+			display: block;
+			padding: 5px 15px;
+			border-radius: 4px;
+		}
+		.sidebar a:hover{
+			background: rgba(255,255,255,0.2);
+			color: #fff;
+			text-decoration:underline;
+		}
+		.content{
+			margin-left: 20%;
+			padding:30px;
+			flex-grow:1;
+			background-color: #fff;
+			min-height: 100vh;
+		}
+		.content h1{
+			font-size: 28px;
+			color: #2a5298;
+			margin-bottom: 20px;
+			border-bottom: 2px solid#e0e0e0;
+			padding-bottom: 10px;
+		}
+		.content h2{
+			font-size: 22px;
+			color: #1e3c72;
+			margin-top: 30px;
+			margin-bottom: 10px;
+		}
+		.content h3{
+			font-size: 18px;
+			color: #2a5298;
+
+		}
+		.content h4{
+			font-size: 16px;
+			color: #555;
+			margin-bottom: 10px;
+		}
+		.content ul {    
+            list-style-type: disc;    
+            margin-left: 20px;    
+            margin-bottom: 20px;    
+        }    
+    
+        .content li {    
+            margin-bottom: 8px;    
+        }    
+    
+        .content img {    
+            max-width: 100%;    
+            height: auto;    
+            margin-bottom: 20px;    
+            border-radius: 8px;    
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);    
+			cursor: pointer;
+			transition: transform 0.2s;
+        }    
+		.content img:hover{
+			transform: scale(1.02);
+		}
+        /* 表格样式 */    
+        .content table {    
+            width: 100%;    
+            border-collapse: collapse;    
+            margin-bottom: 20px;    
+        }    
+    
+        .content table, .content th, .content td {    
+            border: 1px solid #ddd;    
+        }    
+    
+        .content th, .content td {    
+            padding: 12px;    
+            text-align: center;    
+        }    
+    
+        .content th {    
+            background-color: #f2f2f2;    
+            color: #333;    
+        }    
+        .modal {    
+            display: none; /* 默认隐藏 */    
+            position: fixed;    
+            z-index: 1000;    
+            padding-top: 60px;    
+            left: 0;    
+            top: 0;    
+            width: 100%;    
+            height: 100%;    
+            overflow: auto;    
+            background-color: rgba(0,0,0,0.8);    
+        } 
+        .modal-content {    
+            margin: auto;    
+            display: block;    
+            max-width: 90%;    
+            max-height: 80%;    
+            border-radius: 8px;    
+            box-shadow: 0 2px 8px rgba(255,255,255,0.2);    
+            animation-name: zoom;    
+            animation-duration: 0.6s;    
+        }  
+		@keyframes zoom {    
+            from {transform: scale(0)}    
+            to {transform: scale(1)}    
+        }    
+        /* 关闭按钮 */    
+        .close {    
+            position: absolute;    
+            top: 30px;    
+            right: 35px;    
+            color: #fff;    
+            font-size: 40px;    
+            font-weight: bold;    
+            transition: color 0.3s;    
+            cursor: pointer;    
+        }
+		.close:hover,    
+        .close:focus {    
+            color: #bbb;    
+            text-decoration: none;    
+            cursor: pointer;    
+        }   
+        /* 响应式设计 */    
+        @media (max-width: 768px) {    
+            .sidebar {    
+                width: 100%;    
+                height: auto;    
+                position: relative;    
+            }    
+            .content {    
+                margin-left: 0;    
+            }    
+		}
+	</style>
+</head>
+<body>
+
+<div class="sidebar">
+	<h1>计划流程</h1>
+	<h2><a href="#section1">一、.环境准备</a></h2>
+	<h2><a href="#section2">二、导入数据</a></h2>
+	<h2><a href="#section3">三、计划前处理</a></h2>
+		<h3><a href="#section3-1">3.1关联电子密度</a></h3>
+		<h3><a href="#section3-2">3.2加床板</a></h3>
+		<h3><a href="#section3-3">3.3加体位固定附件</a></h3>
+		<h3><a href="#section3-4">3.4加Mark点</a></h3>
+		<h3><a href="#section3-4">3.5检查ROI/画辅助结构</a></h3>
+	<h2><a href="#section4">四、计划设计</a></h2>
+		<h3><a href="#section4-1">4.1 调强计划步骤</a></h3>
+		<h3><a href="#section4-2">4.2 3D-CRT计划步骤</a></h3>
+		<h3><a href="#section4-3">4.3 uArc优化算法</a></h3>
+		<h3><a href="#section4-4">4.4 uArc弧度避开设置</a></h3>
+		<h3><a href="#section4-5">4.5 锁JAW</a></h3>
+		<h3><a href="#section4-6">4.6 自动开野</a></h3>
+	<h2><a href="#section5">五、计划评估和批准</a></h2>
+		<h3><a href="#section5-1">5.1计划评估</a></h3>
+		<h3><a href="#section5-2">5.2计划批准</a></h3>
+		<h3><a href="#section5-3">5.3打印报告</a></h3>
+		<h3><a href="#section5-4">5.4截屏打印</a></h3>
+		<h3><a href="#section5-5">5.5调视窗保存模板</a></h3>
+		<h2><a href="#section6">六、射野管理和排程</a></h2>
+		<h2><a href="#section7">七、计划导出</a></h2>
+</div>
+<div class="content">
+		<h1 id = "section1">一、环境准备</h1>
+			<h4 style="color:green">
+				<ul>
+					<li>浏览器版本要求： Chrome112</li>
+					<li>系统环境： 16G内存， 院内网环境</li>
+					<li>地址：☞ <a href ="http://10.36.153.120:10010" target="_blank" style="color:blue">10.36.153.120:10010</a></li>
+					<li>用户名：姓名首字母缩写</li>
+					<li>初始默认密码：2222</li>
+				</ul>
+			</h4>
+			<h3>流程图</h3> </br>
+			<img src="Plan_workflow/计划工作流.png" alt="计划工作流程" class="zoomable">	
+		<h1 id = "section2">二、导入数据</h1>
+			<h3><a href="ois_b01.html#task_kc5_y3j_5sb" target="_blank" style="color:blue">☞ 详细参考：从服务器导入数据</a></h3></br>
+			<img src="Plan_workflow/从服务器导入.png" alt="从服务器导入" class="zoomable" >
+		<h1 id="section3">三、计划前处理</h1>
+			<h2 id="section3-1"><a href="tps_c01.html" target="_blank" style="color:blue">3.1 ☞ 关联电子密度</a></h2>
+			<ul><h4>
+				<li>1.选择患者，双击进入勾画界面</li>
+				<li>2.选择CT序列，双击加载图像</li>
+				<li>3.选择电子密度表</li></ul>
+				<img src="Plan_workflow/ctdensity.png"   alt="关联电子密度" class="zoomable">
+			</h4></ul>				
+			<h2 id="section3-2"><a href="tps_c02.html#task_jy3_p1j_xwb" target="_blank" style="color:blue">3.2 ☞ 加床板</a></h2>
+					<img src="Plan_workflow/添加治疗床.png"  width="1500" height="600" >
+			<h2 id="section3-3" ><a href="tps_c02.html#task_hly_jy3_xwb" target="_blank" style="color:blue">3.3 ☞ 加体位固定附件 Fixation</a></h3>
+				<h3 style="color:green">需要有Body，如图像上没有，画一下：☞工具栏中点“智能分割” ☞其他 ☞选择皮肤/External ☞勾画，然后双击External结构，修改名称为Body</h3>
+				<h3 style="color:red">注意检查Body轮廓，把轮廓线修整到图像上的铅点内</h3>
+				<h3>用脚本生成Fix结构：</h3>
+				<img src="Plan_workflow/fix.png" alt="加床板" class="zoomable">
+			<h2 id="section3-4"><a href="tps_c04.html" target="_blank" style="color:blue">3.4 ☞ 加Mark点(Setup点)</a></h2>
+				<ul><h4>
+					<li>把ROI关掉，十字线定位到铅点上</li><li>在POI栏里点添加POI按钮</li>
+					<li>用基于坐标系的方式，选择角色Setup</li><li>修改名称，OK</li>
+					<img src="Plan_Plan_workflow/addpoi.png"   alt="加Mark点" class="zoomable">
+				</ul></h4>
+			<h2 id="section3-5"><a href="tps_c03.html" target="_blank" p style="color:blue">3.5 ☞ 检查处理ROI，画辅助结构</a></h2>
+		<h1 id="section4">四、计划设计</h1>
+			<h2 id="section4-1"><a href="tps_c42.html" target="_blank"  style="color:blue">☞ 4.1 调强计划设计步骤</a></h2>
+			<h2 id="section4-2"><a href="tps_d08.html" target="_blank"  style="color:blue">☞ 4.2 3D-CRT计划步骤</a></h2>
+			<h2 id="section4-3"><a href="tps_c20.html" target="_blank"  style="color:blue">☞ 4.3 uArc优化算法</a></h2>
+			<h2 id="section4-4"><a href="tps_c21.html" target="_blank"  style="color:blue">☞ 4.4 uArc弧度避开设置</a></h2>
+			<h2 id="section4-5"><a href="tps_c45.html" target="_blank"  style="color:blue">☞ 4.5 锁Jaw</a></h2>
+			<h2 id="section4-6"><a href="tps_c38.html" target="_blank"  style="color:blue">☞ 4.6 自动开野 AutoFlash</a></h2>	
+		<h1 id="section5">五、计划评估和批准</h1>
+			<h2 id="section5-1"><a href="tps_e00.html" target="_blank"  style="color:blue">☞ 5.1.计划评估</a></h2>
+			<h2 id="section5-2"><a href="tps_e00.html" target="_blank"  style="color:blue">☞ 5.2.计划批准</a></h2>
+				<img src="Plan_workflow/appro.png"  alt="计划批准" class="zoomable" >
+			<h2 id="section5-3"><a href="tps_e06.html" target="_blank"  style="color:blue">☞ 5.3.打印报告</a></h2>
+				<ul><li>分别打印这两项</li></ul>
+				<img src="Plan_workflow/report.png"   alt="打印报告" class="zoomable" >
+			<h2 id="section5-4">☞ 5.4.截屏打印</h2>
+			<ul><h4>
+				<li>关闭ROI和POI，跳转到Mark点层面</li><li>用Win+shift+S组合键选区截屏</li><li>打开paint画板，粘贴</li><li>打印成pdf</li><li>再截图目标表，打印</li>
+				<img src="Plan_workflow/printscr.gif"  alt="截屏打印" class="zoomable">
+			</ul></h4>
+			<h2 id="section5-5">☞ 5.5.附：调整视窗保存模板，方便下次使用</h2>
+			<table><tr><td>
+				<img src="Plan_workflow/display.gif" alt="保存图像三视图模板" class="zoomable"></td><td>
+				<img src="Plan_workflow/goalwindow.gif"  alt="保存目标表模板" class="zoomable" ></td></tr>
+			<tr><td style="text-align:center">保存图像三视图模板</td><td style="text-align:center">保存目标表模板</td></tr>
+			</table>
+		<h1 id="section6">六、射野管理和排程</h1>
+			<h2>1.射野管理核对与批准</h2>
+			<img src="Plan_workflow/rvsapp.png"   alt="射野管理核对与批准" class="zoomable" >	
+		<h1 id="section7">七、导出</h1><h4>
+			<ul><li>打开DICOM导出页面</li><li>选择发送目标节点</li><li>点"全选"</li><li>单独取消CT序列的勾选</li><li>导出</li></ul>
+			<img src="Plan_workflow/export.png"   alt="计划导出" class="zoomable">				
+</div>
+
+<!-- 模态窗口 -->    
+<div id="imageModal" class="modal">    
+    <span class="close">&times;</span>    
+    <img class="modal-content" id="modalImage">    
+</div>    
+    
+<!-- JavaScript 用于模态功能 -->    
+<script>    
+    // 获取模态元素    
+    const modal = document.getElementById("imageModal");    
+    const modalImg = document.getElementById("modalImage");    
+    const closeBtn = document.getElementsByClassName("close")[0];    
+    
+    // 获取所有可点击的图片    
+    const images = document.querySelectorAll('.zoomable');    
+    
+    images.forEach(img => {    
+        img.addEventListener('click', function(){    
+            modal.style.display = "block";    
+            modalImg.src = this.src;    
+            modalImg.alt = this.alt;    
+        });    
+    });    
+    // 点击关闭按钮关闭模态    
+    closeBtn.onclick = function() {     
+        modal.style.display = "none";    
+    }    
+    // 点击模态窗口的任意位置（除图片外）关闭模态    
+    modal.onclick = function(event) {    
+        if (event.target == modalImg) {    
+            // 点击图片本身，不关闭    
+            return;    
+        }    
+        modal.style.display = "none";    
+    }    
+</script>    
+</body>
+</html>
