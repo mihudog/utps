@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="set_a01">
+    <title>配置Local Server</title>
+    <shortdesc><image href="%E9%85%8D%E7%BD%AEAE/%E9%85%8D%E7%BD%AELocal%20Server.png"
+            id="image_fzb_5pm_4wb"/></shortdesc>
+    <taskbody>
+        <context>
+            <p>配置入口进入系统，Local Server有三种类型：</p>
+            <ol id="ol_u1p_4xr_lcc">
+                <li>自动导入：将收到的图像序列和勾画数据自动导入到患者列表；</li>
+                <li>只接收：将收到的DICOM数据存储在服务器上；</li>
+                <li>接画发：将收到的图像自动完成智能勾画并发送到指定的系统；</li>
+            </ol>
+        </context>
+    </taskbody>
+</task>

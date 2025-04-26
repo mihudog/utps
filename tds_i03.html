@@ -1,0 +1,288 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="进入平板计划质控界面，点击添加计划 勾选射野组，确定 固定野计划可选择机架、床、准直器归0 旋转调强计划只能选择床、准直器归0 Note: 支持超360度弧做EPID QA Note: 创建EPIDPre计划时支持选择有BeamMatch关联的机器 剂量计算 支持导出当前所加载的BG下所有测量和计算的2D Dosemap. 在计划管理页面批准射野组 ..."/><meta name="DC.rights.owner" content="(C) Copyright 2025"/><meta name="copyright" content="(C) Copyright 2025"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="task"/><meta name="DC.relation" content="tds_i00.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="tds_b01"/><title>治疗前平板计划验证（EPID QA）</title><!--  Generated with Oxygen version 24.1, build number 2022041502.  --><meta name="wh-path2root" content=""/><meta name="wh-toc-id" content="tds_b01-d1282e1489"/><meta name="wh-source-relpath" content="../../WEB版重构文档/OxygenFile/tds_i03.xml"/><meta name="wh-out-relpath" content="tds_i03.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="./oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/app/topic-page.css?buildId=2022041502"/>
+    
+    
+    <script src="./oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="./oxygen-webhelp/app/topic-page.js" src="./oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/oxygen.css?buildId=2022041502"/><link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/notes.css?buildId=2022041502"/></head>
+
+    <body id="tds_b01" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="index.html" class=" wh_logo d-none d-sm-block "><img src="Logo.png" alt="Web-Help"/></a>
+                    <div class=" wh_publication_title "><a href="index.html"><span class="title">Web-Help</span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="v00-d1282e11-mi" data-tocid="v00-d1282e11" data-state="not-ready" class=" topicref " data-id="v00"><span class="title"><a href="v00.html">短视频指南</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="ois_a00-d1282e283-mi" data-tocid="ois_a00-d1282e283" data-state="not-ready" class=" topicref " data-id="ois_a00"><span class="title"><a href="ois_a00.html">系统登录</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="ois_b00-d1282e378-mi" data-tocid="ois_b00-d1282e378" data-state="not-ready" class=" topicref " data-id="ois_b00"><span class="title"><a href="ois_b00.html">DICOM导入导出</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="ois_000-d1282e464-mi" data-tocid="ois_000-d1282e464" data-state="not-ready" class=" topicref " data-id="ois_000"><span class="title"><a href="ois_000.html">OIS系统</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_a00-d1282e744-mi" data-tocid="tps_a00-d1282e744" data-state="not-ready" class=" topicref " data-id="tps_a00"><span class="title"><a href="tps_a00.html">勾画</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_b00-d1282e932-mi" data-tocid="tps_b00-d1282e932" data-state="not-ready" class=" topicref " data-id="tps_b00"><span class="title"><a href="tps_b00.html">图像配准与融合</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_c00-d1282e1101-mi" data-tocid="tps_c00-d1282e1101" data-state="not-ready" class=" topicref " data-id="tps_c00"><span class="title"><a href="tps_c00.html">计划设计</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_e00-d1282e1355-mi" data-tocid="tps_e00-d1282e1355" data-state="not-ready" class=" topicref " data-id="tps_e00"><span class="title"><a href="tps_e00.html">计划评估</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tds_b00-d1282e1463-mi" data-tocid="tds_b00-d1282e1463" data-state="not-ready" class=" topicref " data-id="tds_b00"><span class="title"><a href="tds_i00.html">计划QA</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="rvs_a00-d1282e1523-mi" data-tocid="rvs_a00-d1282e1523" data-state="not-ready" class=" topicref " data-id="rvs_a00"><span class="title"><a href="rvs_a00.html">RVS系统</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="app_000-d1282e1598-mi" data-tocid="app_000-d1282e1598" data-state="not-ready" class=" topicref " data-id="app_000"><span class="title"><a href="app_000.html">临床路径</a></span></span></li><li role="menuitem"><span id="tools-d1282e1623-mi" data-tocid="tools-d1282e1623" data-state="leaf" class=" topicref " data-id="tools"><span class="title"><a href="tools.html">工具和文档</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="tds_b00"><div class="title"><a href="tds_i00.html">计划QA</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li class="active"><div class="topicref" data-id="tds_b01"><div class="title"><a href="tds_i03.html">治疗前平板计划验证（EPID QA）</a></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="tds_b00-d1282e1463" class="topicref" data-id="tds_b00" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action tds_b00-d1282e1463-link" class="wh-expand-btn"></span><div class="title"><a href="tds_i00.html" id="tds_b00-d1282e1463-link">计划QA</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="tds_i06-d1282e1473" class="topicref" data-id="tds_i06" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tds_i06.html" id="tds_i06-d1282e1473-link">创建QA模体</a></div></div></li><li role="treeitem"><div data-tocid="tds_b01-d1282e1481" class="topicref" data-id="tds_b01" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tds_i01.html" id="tds_b01-d1282e1481-link">模体计划验证</a></div></div></li><li role="treeitem" class="active"><div data-tocid="tds_b01-d1282e1489" class="topicref" data-id="tds_b01" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tds_i03.html" id="tds_b01-d1282e1489-link">治疗前平板计划验证（EPID QA）</a></div></div></li><li role="treeitem"><div data-tocid="tds_b01-d1282e1497" class="topicref" data-id="tds_b01" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tds_i02.html" id="tds_b01-d1282e1497-link">Auto EPID QA</a></div></div></li><li role="treeitem"><div data-tocid="tds_i07-d1282e1505" class="topicref" data-id="tds_i07" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tds_i07.html" id="tds_i07-d1282e1505-link">质控系统-计划质控</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="task_q2j_zvs_lcc-d1282e1515" class="topicref" data-id="task_q2j_zvs_lcc" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="tds_i08.html" id="task_q2j_zvs_lcc-d1282e1515-link">附：剂量误差分析</a></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">治疗前平板计划验证（EPID QA）</h1>
+    <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title2" id="task_wpb_shl_4wb">
+        <h2 class="- topic/title title topictitle2" id="ariaid-title2"> 添加EPID QA计划</h2>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps"><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">进入平板计划质控界面，点击添加计划</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">勾选射野组，确定</span>
+                    <div class="- topic/itemgroup task/info itemgroup info">
+                        <ul class="- topic/ul ul" id="task_wpb_shl_4wb__ul_ams_fsc_pyb" data-ofbid="task_wpb_shl_4wb__ul_ams_fsc_pyb">
+                            <li class="- topic/li li">
+                                <p class="- topic/p p">固定野计划可选择机架、床、准直器归0</p>
+                            </li>
+                            <li class="- topic/li li">
+                                <p class="- topic/p p"> 旋转调强计划只能选择床、准直器归0</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" id="task_wpb_shl_4wb__image_wjd_2jl_4wb" src="TDS/QAepid-%E5%88%9B%E5%BB%BAepidQA%E8%AE%A1%E5%88%92.png"/></div>
+                    <div class="- topic/itemgroup task/info itemgroup info">
+                        <div class="- topic/note note note note_note" id="task_wpb_shl_4wb__note_rrz_kn1_wzb" data-ofbid="task_wpb_shl_4wb__note_rrz_kn1_wzb"><span class="note__title">Note:</span> 支持超360度弧做EPID QA</div>
+                        <div class="- topic/note note note note_note" id="task_wpb_shl_4wb__note_tfw_5fs_lcc" data-ofbid="task_wpb_shl_4wb__note_tfw_5fs_lcc"><span class="note__title">Note:</span> 创建EPIDPre计划时支持选择有BeamMatch关联的机器</div>
+                    </div>
+                </li></ol></section>
+        </div>
+    </article>
+    <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title3" id="task_lnz_shl_4wb">
+        <h2 class="- topic/title title topictitle2" id="ariaid-title3">计算和批准</h2>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="task_lnz_shl_4wb__steps_ujp_33l_4wb" data-ofbid="task_lnz_shl_4wb__steps_ujp_33l_4wb"><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">剂量计算</span>
+                    <div class="- topic/itemgroup task/info itemgroup info">
+                        <p class="- topic/p p"><img class="- topic/image image" id="task_lnz_shl_4wb__image_wvk_ljl_4wb" src="TDS/QAepid-%E8%AE%A1%E7%AE%97epidQA%E8%AE%A1%E5%88%92.png"/></p>
+                    </div>
+                    <div class="- topic/itemgroup task/info itemgroup info">支持导出当前所加载的BG下所有测量和计算的2D Dosemap.</div>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">在计划管理页面批准射野组</span>
+                    <div class="- topic/itemgroup task/info itemgroup info">
+                        <p class="- topic/p p"><img class="- topic/image image" id="task_lnz_shl_4wb__image_wrp_mjl_4wb" src="TDS/QAepid-%E8%AE%A1%E5%88%92%E7%AE%A1%E7%90%86%E6%89%B9%E5%87%86epidQA%E8%AE%A1%E5%88%92.png"/></p>
+                    </div>
+                </li></ol></section>
+        </div>
+    </article>
+    <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title4" id="task_wkn_shl_4wb">
+        <h2 class="- topic/title title topictitle2" id="ariaid-title4">平板质控计划排程</h2>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/ol task/steps ol steps"><div class="- topic/ol task/steps ol steps" id="task_wkn_shl_4wb__steps_vfl_33l_4wb" data-ofbid="task_wkn_shl_4wb__steps_vfl_33l_4wb"><div class="- topic/li task/step li step p">
+                    <span class="- topic/ph task/cmd ph cmd">在治疗排程页面选择计划，创建治疗分次，选择质控日期和时间，完成排程</span>
+                    <div class="- topic/itemgroup task/info itemgroup info">
+                        <p class="- topic/p p"><img class="- topic/image image" id="task_wkn_shl_4wb__image_tzq_rjl_4wb" src="TDS/QAepid-%E6%8E%92%E7%A8%8B.png"/></p>
+                    </div>
+                </div></div></section>
+        </div>
+    </article>
+    <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title5" id="task_n2c_thl_4wb">
+        <h2 class="- topic/title title topictitle2" id="ariaid-title5">执行EPID QA计划</h2>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/ol task/steps ol steps"><div class="- topic/ol task/steps ol steps" id="task_n2c_thl_4wb__steps_yls_33l_4wb" data-ofbid="task_n2c_thl_4wb__steps_yls_33l_4wb"><div class="- topic/li task/step li step p">
+                    <span class="- topic/ph task/cmd ph cmd">TDA登录验证模式，选择EPID PlanQA计划，加载执行</span>
+                    <div class="- topic/itemgroup task/info itemgroup info">
+                        <p class="- topic/p p"><img class="- topic/image image" id="task_n2c_thl_4wb__image_s24_xjl_4wb" src="TDS/QAepid-%E6%89%A7%E8%A1%8C4.png"/></p>
+                        <p class="- topic/p p"><img class="- topic/image image" id="task_n2c_thl_4wb__image_wm3_yjl_4wb" src="TDS/QAepid-%E6%89%A7%E8%A1%8C5.png"/></p>
+                        <p class="- topic/p p"><img class="- topic/image image" id="task_n2c_thl_4wb__image_nfk_zjl_4wb" src="TDS/QAepid-%E6%89%A7%E8%A1%8C6.png"/></p>
+                    </div>
+                </div></div></section>
+        </div>
+    </article>
+    <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title6" id="task_qhf_thl_4wb">
+        <h2 class="- topic/title title topictitle2" id="ariaid-title6">EPID planQA结果分析</h2>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/section task/context section context" id="task_qhf_thl_4wb__context_wyn_brw_rxb" data-ofbid="task_qhf_thl_4wb__context_wyn_brw_rxb">
+                <p class="- topic/p p"></p>
+            </section>
+            <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="task_qhf_thl_4wb__steps_bhv_33l_4wb" data-ofbid="task_qhf_thl_4wb__steps_bhv_33l_4wb"><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">选择<strong class="+ topic/ph hi-d/b ph b">比较叠加剂量</strong>，勾选<strong class="+ topic/ph hi-d/b ph b">采集的数据</strong>，<strong class="+ topic/ph hi-d/b ph b">应用</strong></span>
+                    <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" id="task_qhf_thl_4wb__image_i2n_2kl_4wb" src="TDS/QAepid-%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%901.png"/></div>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">点<strong class="+ topic/ph hi-d/b ph b">比较</strong>，计算出通过率等结果。</span>
+                    <div class="- topic/itemgroup task/info itemgroup info">
+                        <div class="- topic/note note note note_note" id="task_qhf_thl_4wb__note_hqg_1tc_pyb" data-ofbid="task_qhf_thl_4wb__note_hqg_1tc_pyb"><span class="note__title">Note:</span> 
+                            <p class="- topic/p p">2种比较分析模式：</p>
+                            <ul class="- topic/ul ul" id="task_qhf_thl_4wb__ul_hvn_ctc_pyb" data-ofbid="task_qhf_thl_4wb__ul_hvn_ctc_pyb">
+                                <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">射束剂量</strong>：逐个选中单个射束后，点击<strong class="+ topic/ph hi-d/b ph b">比较</strong>按钮。针对单个射束进行比较得到对应的Gamma通过率结果以及Profile曲线的查看。</li>
+                                <li class="- topic/li li"><strong class="+ topic/ph hi-d/b ph b">比较叠加剂量</strong>：点击【比较叠加剂量】，弹出比较叠加剂量界面，选择需要叠加的所有Beam，点击应用，叠加各射束剂量点击<strong class="+ topic/ph hi-d/b ph b">比较</strong>，得到计划的通过率结果。</li>
+                            </ul>
+                            <p class="- topic/p p">对比设置参数说明：</p>
+                            <div class="- topic/p p">
+                                <ul class="- topic/ul ul" id="task_qhf_thl_4wb__ul_p2x_ksw_rxb" data-ofbid="task_qhf_thl_4wb__ul_p2x_ksw_rxb">
+                                    <li class="- topic/li li">模板：将常用的分析存为模板，方便后续调用。支持存为模板、加载模板、删除模板。</li>
+                                    <li class="- topic/li li">剂量偏差：测量点剂量与计划点处剂量的差值是否在容许范围内。</li>
+                                    <li class="- topic/li li">位置偏差（DTA）:与计划点具有相同剂量值的测量点和计划点之间的最小距离是否在容许距离范围内。</li>
+                                    <li class="- topic/li li">伽马指数：是对探测器实测的矩阵与计划系统计算得到的剂量分布矩阵进行剂量点百分比的一致性进行评估。<p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">归一于Region</strong>：把计划与测量的剂量分别归一于各自80%的等剂量线，对相对值进行比较</p><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">归一于POI</strong>：以目标点为剂量基准，其他的点向该点归一，对相对值进行比较。</p><p class="- topic/p p">
+                                            Normalization:归一于界面选中的一点 </p><p class="- topic/p p">Max :归一于最大剂量点</p></li>
+                                    <li class="- topic/li li">全局比较：全局比较为计算图像中剂量点的剂量与测量图像中对应剂量点的剂量的差值除以计算图像中最大剂量点的剂量,得出的值与设置的剂量容差相比较。</li>
+                                    <li class="- topic/li li">局部比较：局部比较为计算图像中的当前点的剂量与测量图像中当前点的剂量的差值除以计算图像中当前点的剂量,得出的值与设置的剂量容差相比较。</li>
+                                    <li class="- topic/li li">剂量阈值：为了减少散射等因素对结果造成的影响，舍弃该百分阈值以下数值参与计算</li>
+                                    <li class="- topic/li li">因子：剂量的校正因子，测量值乘以该因子与计算值比较，快速计算相对通过率（目前因子还未使用）</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="- topic/p p">剖面曲线详情：</p>
+                        <p class="- topic/p p">剖面曲线支持查看在X、Y和斜对角线方向上计划值与测量值的剂量分布曲线，还支持自定义方向。选择剖面曲线类型，并在比较视图中拖动剖线位置，可观察剖面曲线的符合程度。</p>
+                        <p class="- topic/p p"><img class="- topic/image image" id="task_qhf_thl_4wb__image_mds_1fx_rxb" src="TDS/QAepid-%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%902.png"/></p>
+                        <p class="- topic/p p">绝对点剂量分析：各检查项分别为：</p>
+                        <div class="- topic/p p">
+                            <ul class="- topic/ul ul" id="task_qhf_thl_4wb__ul_jsf_kzw_rxb" data-ofbid="task_qhf_thl_4wb__ul_jsf_kzw_rxb">
+                                <li class="- topic/li li">MAX表示剂量云图里面的最大剂量点;</li>
+                                <li class="- topic/li li">CAX表示剂量云图上轴中心点的剂量点;</li>
+                                <li class="- topic/li li">NORM是归一点，选择某点作为基准，其他点向该点归一，归一点默认与CAX的值一致；</li>
+                                <li class="- topic/li li">Point1表示蓝色轴线上的最大剂量点。<div class="- topic/note note note note_note" id="task_qhf_thl_4wb__note_kjk_qcx_rxb" data-ofbid="task_qhf_thl_4wb__note_kjk_qcx_rxb"><span class="note__title">Note:</span> 比较视图中各点含义：绿点：等中心点，即默认的归一点（NORM）；黄点：图像中心点（CAX）；红点：热点；蓝色：冷点</div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li></ol></section>
+        </div>
+    </article>
+    <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title7" id="task_lhk_thl_4wb">
+        <h2 class="- topic/title title topictitle2" id="ariaid-title7">EPID验证报告导出</h2>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/ol task/steps ol steps"><div class="- topic/ol task/steps ol steps" id="task_lhk_thl_4wb__steps_gwx_33l_4wb" data-ofbid="task_lhk_thl_4wb__steps_gwx_33l_4wb"><div class="- topic/li task/step li step p">
+                    <span class="- topic/ph task/cmd ph cmd">
+                            在TPS端的<strong class="+ topic/ph hi-d/b ph b">质控</strong><strong class="+ topic/ph hi-d/b ph b">系统</strong>-<strong class="+ topic/ph hi-d/b ph b">计划质控</strong>查看记录。选择<strong class="+ topic/ph hi-d/b ph b">日期</strong>-选择<strong class="+ topic/ph hi-d/b ph b">质控计划，</strong>勾选患者，可以批量<strong class="+ topic/ph hi-d/b ph b">下载</strong>或<strong class="+ topic/ph hi-d/b ph b">打印</strong>报告。</span>
+                    <div class="- topic/itemgroup task/info itemgroup info">
+                        <p class="- topic/p p"><img class="- topic/image image" id="task_lhk_thl_4wb__image_pns_3kl_4wb" src="TDS/QAepid-%E6%8A%A5%E5%91%8A%E5%AF%BC%E5%87%BA1.png"/></p>
+                    </div>
+                </div></div></section>
+        </div>
+    </article>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="topic-item"><a href="#task_wpb_shl_4wb" data-tocid="task_wpb_shl_4wb"> 添加EPID QA计划</a></li><li class="topic-item"><a href="#task_lnz_shl_4wb" data-tocid="task_lnz_shl_4wb">计算和批准</a></li><li class="topic-item"><a href="#task_wkn_shl_4wb" data-tocid="task_wkn_shl_4wb">平板质控计划排程</a></li><li class="topic-item"><a href="#task_n2c_thl_4wb" data-tocid="task_n2c_thl_4wb">执行EPID QA计划</a></li><li class="topic-item"><a href="#task_qhf_thl_4wb" data-tocid="task_qhf_thl_4wb">EPID planQA结果分析</a></li><li class="topic-item"><a href="#task_lhk_thl_4wb" data-tocid="task_lhk_thl_4wb">EPID验证报告导出</a></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    本文档不可替代用户手册，由于版本和配置的差异可能存在与本文档描述不符的情况。本文档所涉及内容并非联影的承诺，可随时更改，恕不另行通知。由于描述性偏颇或使用本文档发生的附带损失，联影概不承担任何责任。
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

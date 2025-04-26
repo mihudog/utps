@@ -1,0 +1,372 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="Figure 1 . 勾画工作流程 Figure 2 . 图像融合+勾画工作流程 详细参考： 勾画 双击加载图像 选择患者，双击进入勾画界面 选择CT序列，双击加载图像 调用模板做勾画 点 加载模板 选择模板 确认后，系统会按模板指定的方式画出ROI &lt;智能分割支持&gt;为&#34;是&#34;的ROI会自动画出来，&#34;否&#34;的则生成空结构。&lt;函数支持&gt;为&#34;是&#34;的ROI，会自动带上关联关系 用勾画工具勾画靶区 ..."/><meta name="DC.rights.owner" content="(C) Copyright 2025"/><meta name="copyright" content="(C) Copyright 2025"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="task"/><meta name="DC.relation" content="app_000.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="app_a02"/><title>勾画和图像融合工作流</title><!--  Generated with Oxygen version 24.1, build number 2022041502.  --><meta name="wh-path2root" content=""/><meta name="wh-toc-id" content="app_a02-d1282e1606"/><meta name="wh-source-relpath" content="../../WEB版重构文档/OxygenFile/app_a02.xml"/><meta name="wh-out-relpath" content="app_a02.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="./oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/app/topic-page.css?buildId=2022041502"/>
+    
+    
+    <script src="./oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="./oxygen-webhelp/app/topic-page.js" src="./oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/oxygen.css?buildId=2022041502"/><link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/notes.css?buildId=2022041502"/></head>
+
+    <body id="app_a02" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="index.html" class=" wh_logo d-none d-sm-block "><img src="Logo.png" alt="Web-Help"/></a>
+                    <div class=" wh_publication_title "><a href="index.html"><span class="title">Web-Help</span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="v00-d1282e11-mi" data-tocid="v00-d1282e11" data-state="not-ready" class=" topicref " data-id="v00"><span class="title"><a href="v00.html">短视频指南</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="ois_a00-d1282e283-mi" data-tocid="ois_a00-d1282e283" data-state="not-ready" class=" topicref " data-id="ois_a00"><span class="title"><a href="ois_a00.html">系统登录</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="ois_b00-d1282e378-mi" data-tocid="ois_b00-d1282e378" data-state="not-ready" class=" topicref " data-id="ois_b00"><span class="title"><a href="ois_b00.html">DICOM导入导出</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="ois_000-d1282e464-mi" data-tocid="ois_000-d1282e464" data-state="not-ready" class=" topicref " data-id="ois_000"><span class="title"><a href="ois_000.html">OIS系统</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_a00-d1282e744-mi" data-tocid="tps_a00-d1282e744" data-state="not-ready" class=" topicref " data-id="tps_a00"><span class="title"><a href="tps_a00.html">勾画</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_b00-d1282e932-mi" data-tocid="tps_b00-d1282e932" data-state="not-ready" class=" topicref " data-id="tps_b00"><span class="title"><a href="tps_b00.html">图像配准与融合</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_c00-d1282e1101-mi" data-tocid="tps_c00-d1282e1101" data-state="not-ready" class=" topicref " data-id="tps_c00"><span class="title"><a href="tps_c00.html">计划设计</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_e00-d1282e1355-mi" data-tocid="tps_e00-d1282e1355" data-state="not-ready" class=" topicref " data-id="tps_e00"><span class="title"><a href="tps_e00.html">计划评估</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tds_b00-d1282e1463-mi" data-tocid="tds_b00-d1282e1463" data-state="not-ready" class=" topicref " data-id="tds_b00"><span class="title"><a href="tds_i00.html">计划QA</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="rvs_a00-d1282e1523-mi" data-tocid="rvs_a00-d1282e1523" data-state="not-ready" class=" topicref " data-id="rvs_a00"><span class="title"><a href="rvs_a00.html">RVS系统</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="app_000-d1282e1598-mi" data-tocid="app_000-d1282e1598" data-state="not-ready" class=" topicref " data-id="app_000"><span class="title"><a href="app_000.html">临床路径</a></span></span></li><li role="menuitem"><span id="tools-d1282e1623-mi" data-tocid="tools-d1282e1623" data-state="leaf" class=" topicref " data-id="tools"><span class="title"><a href="tools.html">工具和文档</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="app_000"><div class="title"><a href="app_000.html">临床路径</a></div></div></li><li class="active"><div class="topicref" data-id="app_a02"><div class="title"><a href="app_a02.html">勾画和图像融合工作流</a></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="app_000-d1282e1598" class="topicref" data-id="app_000" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action app_000-d1282e1598-link" class="wh-expand-btn"></span><div class="title"><a href="app_000.html" id="app_000-d1282e1598-link">临床路径</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" class="active"><div data-tocid="app_a02-d1282e1606" class="topicref" data-id="app_a02" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="app_a02.html" id="app_a02-d1282e1606-link">勾画和图像融合工作流</a></div></div></li><li role="treeitem"><div data-tocid="app_a02-d1282e1614" class="topicref" data-id="app_a02" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="app_a03.html" id="app_a02-d1282e1614-link">计划设计工作流</a></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">勾画和图像融合工作流</h1>
+    <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title2" id="task_byn_fdt_32c">
+        <h2 class="- topic/title title topictitle2" id="ariaid-title2">一、工作流程</h2>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/section task/context section context" id="task_byn_fdt_32c__context_cyn_fdt_32c" data-ofbid="task_byn_fdt_32c__context_cyn_fdt_32c">
+                <div class="- topic/p p">
+                    <figure class="- topic/fig fig fignone" id="task_byn_fdt_32c__fig_czc_xdt_32c" data-ofbid="task_byn_fdt_32c__fig_czc_xdt_32c"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 1</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">勾画工作流程</span></figcaption>
+                        
+                        <img class="- topic/image image" id="task_byn_fdt_32c__image_dzc_xdt_32c" src="%E4%B8%B4%E5%BA%8A%E8%B7%AF%E5%BE%84/Contour_workflow/Contour.png"/>
+                    </figure>
+                </div>
+                <div class="- topic/p p">
+                    <figure class="- topic/fig fig fignone" id="task_byn_fdt_32c__fig_hgp_ydt_32c" data-ofbid="task_byn_fdt_32c__fig_hgp_ydt_32c"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure<span class="fig--title-label-number"> 2</span><span class="fig--title-label-punctuation">. </span></span><span class="fig--title">图像融合+勾画工作流程</span></figcaption>
+                        
+                        <img class="- topic/image image" id="task_byn_fdt_32c__image_igp_ydt_32c" src="%E4%B8%B4%E5%BA%8A%E8%B7%AF%E5%BE%84/Contour_workflow/FusionContour.png"/>
+                    </figure>
+                </div>
+            </section>
+        </div>
+    </article>
+    <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title3" id="task_txf_b2t_32c">
+        <h2 class="- topic/title title topictitle2" id="ariaid-title3">二、勾画</h2>
+        
+        <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc">详细参考：<a class="- topic/xref xref" href="tps_a00.html">勾画</a></p>
+            <section class="- topic/section task/context section context" id="task_txf_b2t_32c__context_mnr_r2t_32c" data-ofbid="task_txf_b2t_32c__context_mnr_r2t_32c"></section>
+            <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="task_txf_b2t_32c__steps_k51_s2t_32c" data-ofbid="task_txf_b2t_32c__steps_k51_s2t_32c"><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">双击加载图像</strong></span>
+                    <ol type="a" class="- topic/ol task/substeps ol substeps" id="task_txf_b2t_32c__substeps_qbg_xht_32c" data-ofbid="task_txf_b2t_32c__substeps_qbg_xht_32c">
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">选择患者，双击进入勾画界面</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">选择CT序列，双击加载图像</span>
+                        </li>
+                    </ol>
+                    <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" id="task_txf_b2t_32c__image_wfh_dft_32c" src="%E4%B8%B4%E5%BA%8A%E8%B7%AF%E5%BE%84/Contour_workflow/%E5%8A%A0%E8%BD%BD%E5%9B%BE%E5%83%8F.png"/></div>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">调用模板做勾画</strong></span>
+                    <ol type="a" class="- topic/ol task/substeps ol substeps" id="task_txf_b2t_32c__substeps_u23_jft_32c" data-ofbid="task_txf_b2t_32c__substeps_u23_jft_32c">
+                        <li class="- topic/li task/substep li substep substepexpand">
+                            <span class="- topic/ph task/cmd ph cmd">点<em class="+ topic/ph hi-d/i ph i"><strong class="+ topic/ph hi-d/b ph b">加载模板</strong></em></span>
+                        </li>
+                        <li class="- topic/li task/substep li substep substepexpand">
+                            <span class="- topic/ph task/cmd ph cmd">选择模板</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep substepexpand">
+                            <span class="- topic/ph task/cmd ph cmd">确认后，系统会按模板指定的方式画出ROI</span>
+                            <div class="- topic/itemgroup task/info itemgroup info">&lt;智能分割支持&gt;为"是"的ROI会自动画出来，"否"的则生成空结构。&lt;函数支持&gt;为"是"的ROI，会自动带上关联关系</div>
+                        </li>
+                    </ol>
+                    <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" id="task_txf_b2t_32c__image_tmw_tft_32c" src="%E4%B8%B4%E5%BA%8A%E8%B7%AF%E5%BE%84/Contour_workflow/%E5%8A%A0%E8%BD%BD%E6%A8%A1%E6%9D%BF.png"/></div>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd"><a class="- topic/xref xref" href="tps_a05.html" title="在ROI列表选中激活状态下的ROI，选择如下工具进行手动勾画。"><strong class="+ topic/ph hi-d/b ph b">用勾画工具勾画靶区</strong></a></span>
+                    <ol type="a" class="- topic/ol task/substeps ol substeps" id="task_txf_b2t_32c__substeps_f4t_5ft_32c" data-ofbid="task_txf_b2t_32c__substeps_f4t_5ft_32c">
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">推画，按键盘“+” “-”键缩放画刷的直径，按 A键 可在同层做并行勾画</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">形变拖拽，可做"点线式"勾画，线条首尾相连闭合轮廓线，在线条上拖拽做局部修改</span>
+                        </li>
+                    </ol>
+                    <div class="- topic/itemgroup task/info itemgroup info">
+                        <div class="simpletable-container"><table class="- topic/simpletable simpletable frame-none" id="task_txf_b2t_32c__simpletable_hym_5gt_32c" data-ofbid="task_txf_b2t_32c__simpletable_hym_5gt_32c"><colgroup><col style="width:50%"/><col style="width:50%"/></colgroup><tbody><tr class="- topic/strow strow">
+                                <td class="- topic/stentry stentry">
+                                    <figure class="- topic/fig fig fignone" id="task_txf_b2t_32c__fig_hxm_vgt_32c" data-ofbid="task_txf_b2t_32c__fig_hxm_vgt_32c">
+                                        <img class="- topic/image image" id="task_txf_b2t_32c__image_ixm_vgt_32c" src="%E4%B8%B4%E5%BA%8A%E8%B7%AF%E5%BE%84/Contour_workflow/%E6%8E%A8%E7%94%BB.gif" alt="推画"/>
+                                    </figure>
+                                </td>
+                                <td class="- topic/stentry stentry">
+                                    <figure class="- topic/fig fig fignone" id="task_txf_b2t_32c__fig_krt_wgt_32c" data-ofbid="task_txf_b2t_32c__fig_krt_wgt_32c">
+                                        <img class="- topic/image image" id="task_txf_b2t_32c__image_lrt_wgt_32c" src="%E4%B8%B4%E5%BA%8A%E8%B7%AF%E5%BE%84/Contour_workflow/%E5%BD%A2%E5%8F%98%E6%8B%96%E6%8B%BD.gif" alt="形变拖拽"/>
+                                    </figure>
+                                </td>
+                            </tr></tbody></table></div>
+                    </div>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">辅助勾画</strong></span>
+                    <ol type="a" class="- topic/ol task/substeps ol substeps" id="task_txf_b2t_32c__substeps_gbs_r3t_32c" data-ofbid="task_txf_b2t_32c__substeps_gbs_r3t_32c">
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">激活辅助勾画</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">用勾画工具连续勾画两层，翻到第三层时会出现投影（会根据层间灰度变化自动形变）</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">按<strong class="+ topic/ph hi-d/b ph b">Q</strong>键将投影变为轮廓线，用&lt;推画&gt;或&lt;形变拖拽&gt;等工具修改轮廓</span>
+                        </li>
+                    </ol>
+                    <div class="- topic/itemgroup task/info itemgroup info">
+                        <figure class="- topic/fig fig fignone" id="task_txf_b2t_32c__fig_nm2_w3t_32c" data-ofbid="task_txf_b2t_32c__fig_nm2_w3t_32c">
+                            <img class="- topic/image image" id="task_txf_b2t_32c__image_om2_w3t_32c" src="%E4%B8%B4%E5%BA%8A%E8%B7%AF%E5%BE%84/Contour_workflow/%E8%BE%85%E5%8A%A9%E5%8B%BE%E7%94%BB.gif" alt="辅助勾画"/>
+                        </figure>
+                    </div>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">外扩内缩</strong></span>
+                    <ol type="a" class="- topic/ol task/substeps ol substeps" id="task_txf_b2t_32c__substeps_wbv_hjt_32c" data-ofbid="task_txf_b2t_32c__substeps_wbv_hjt_32c">
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">选择“外扩内缩”，图中两个地方都可以打开</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">选择1个"源"</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">设置外扩/内缩的数值</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">可选不进入（避开）某个结构，并设置间距</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">可选不超出皮肤，并设置缩进皮肤的间距</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">将修改结果生成新结构或覆盖到已存在的结构上</span>
+                        </li>
+                    </ol>
+                    <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" id="task_txf_b2t_32c__image_whd_njt_32c" src="%E4%B8%B4%E5%BA%8A%E8%B7%AF%E5%BE%84/Contour_workflow/%E5%A4%96%E6%89%A9%E5%86%85%E7%BC%A9.png"/></div>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">关联更新</strong></span>
+                    <div class="- topic/itemgroup task/info itemgroup info">ROI之间的逻辑关系可被保存在模板内，修改原结构后，关联结构可同步更新</div>
+                    <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" id="task_txf_b2t_32c__image_w1d_qjt_32c" src="%E4%B8%B4%E5%BA%8A%E8%B7%AF%E5%BE%84/Contour_workflow/%E5%85%B3%E8%81%94%E6%9B%B4%E6%96%B0.png"/></div>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">靶区自动勾画</strong></span>
+                    <div class="- topic/itemgroup task/info itemgroup info"><strong class="+ topic/ph hi-d/b ph b">注意：</strong>部分靶区有参考依赖，如：鼻咽癌的CTV1/CTV2/两个GTVnd，都以来GTVnx，需要先手动把GTVnx画出来，才可自动画这4个靶区</div>
+                    <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" id="task_txf_b2t_32c__image_qbq_5jt_32c" src="%E4%B8%B4%E5%BA%8A%E8%B7%AF%E5%BE%84/Contour_workflow/%E9%9D%B6%E5%8C%BA%E5%8F%82%E8%80%83.png"/></div>
+                </li></ol></section>
+        </div>
+    </article>
+    <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title4" id="task_z1r_52t_32c">
+        <h2 class="- topic/title title topictitle2" id="ariaid-title4">三、图像融合</h2>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="task_z1r_52t_32c__steps_bbr_52t_32c" data-ofbid="task_z1r_52t_32c__steps_bbr_52t_32c"><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">导入MR序列</strong></span>
+                    <ol type="a" class="- topic/ol task/substeps ol substeps" id="task_z1r_52t_32c__substeps_i4f_yjt_32c" data-ofbid="task_z1r_52t_32c__substeps_i4f_yjt_32c">
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">选择患者，双击，&lt;导入&gt;</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">选择数据来源为,选择PACS</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">按ID号或姓名检索患者。选择序列，移动序列</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">导入MR序列</span>
+                        </li>
+                    </ol>
+                    <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" id="task_z1r_52t_32c__image_hnd_dkt_32c" src="%E4%B8%B4%E5%BA%8A%E8%B7%AF%E5%BE%84/Contour_workflow/%E5%AF%BC%E5%85%A5MR%E5%BA%8F%E5%88%97.png"/></div>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">图像配准</strong></span>
+                    <ol type="a" class="- topic/ol task/substeps ol substeps" id="task_z1r_52t_32c__substeps_wnp_yjt_32c" data-ofbid="task_z1r_52t_32c__substeps_wnp_yjt_32c">
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">进入&lt;配准&gt;页面</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">在CT序列上双击加载CT</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">选择一个MR序列，点右键，&lt;添加为刚性配准&gt;。系统会做一次自动配准。</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">如果配准效果不理想，可使用&lt;平移&gt;和&lt;旋转&gt;，手动粗调，让图像层面大致对齐，然后点&lt;执行刚性&gt;尝试让系统自动配准。也可手动精细调整做最终结果</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">配准后的结果会实时保存</span>
+                        </li>
+                    </ol>
+                    <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" id="task_z1r_52t_32c__image_oxb_lkt_32c" src="%E4%B8%B4%E5%BA%8A%E8%B7%AF%E5%BE%84/Contour_workflow/%E5%88%9A%E6%80%A7%E9%85%8D%E5%87%86.png"/></div>
+                    <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" id="task_z1r_52t_32c__image_rpm_mkt_32c" src="%E4%B8%B4%E5%BA%8A%E8%B7%AF%E5%BE%84/Contour_workflow/%E6%89%8B%E5%8A%A8%E9%85%8D%E5%87%86.gif" alt="手动配准"/></div>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">对照勾画</strong></span>
+                    <ol type="a" class="- topic/ol task/substeps ol substeps" id="task_z1r_52t_32c__substeps_gls_yjt_32c" data-ofbid="task_z1r_52t_32c__substeps_gls_yjt_32c">
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">用<em class="+ topic/ph hi-d/i ph i"><strong class="+ topic/ph hi-d/b ph b">布局管理</strong></em>调成2窗口对照，把混合窗的滑动条拉到左侧，只显示CT图像</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">添加ROI</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">使用勾画工具画靶区，此时主副图上的光标会同步显示</span>
+                        </li>
+                    </ol>
+                    <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" id="task_z1r_52t_32c__image_kpj_skt_32c" src="%E4%B8%B4%E5%BA%8A%E8%B7%AF%E5%BE%84/Contour_workflow/%E5%8F%8C%E7%AA%97%E5%AF%B9%E7%85%A7%E5%8B%BE%E7%94%BB.gif" alt="对照勾画"/></div>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd"><strong class="+ topic/ph hi-d/b ph b">多视窗检查</strong></span>
+                    <ol type="a" class="- topic/ol task/substeps ol substeps" id="task_z1r_52t_32c__substeps_fn5_yjt_32c" data-ofbid="task_z1r_52t_32c__substeps_fn5_yjt_32c">
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">在&lt;布局管理&gt;中切换为多视窗显示</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">把配准关系拖到另外的视窗</span>
+                        </li>
+                        <li class="- topic/li task/substep li substep">
+                            <span class="- topic/ph task/cmd ph cmd">多视窗中切换MR序列</span>
+                        </li>
+                    </ol>
+                    <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" id="task_z1r_52t_32c__image_dnk_1lt_32c" src="%E4%B8%B4%E5%BA%8A%E8%B7%AF%E5%BE%84/Contour_workflow/%E5%A4%9A%E8%A7%86%E7%AA%97%E6%A3%80%E6%9F%A5.gif" alt="多视窗检查"/></div>
+                </li></ol></section>
+        </div>
+    </article>
+    <article class="- topic/topic task/task topic task nested1" aria-labelledby="ariaid-title5" id="task_dxt_clt_32c">
+        <h2 class="- topic/title title topictitle2" id="ariaid-title5">四、导出图像</h2>
+        <div class="- topic/body task/taskbody body taskbody">
+            <section class="- topic/ol task/steps ol steps"><ol class="- topic/ol task/steps ol steps" id="task_dxt_clt_32c__steps_wyb_2lt_32c" data-ofbid="task_dxt_clt_32c__steps_wyb_2lt_32c"><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">切换到DICOM导出模块</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">导出路径选择，如PACS：pinnacle</span>
+                </li><li class="- topic/li task/step li step">
+                    <span class="- topic/ph task/cmd ph cmd">勾选数据，导出</span>
+                    <div class="- topic/itemgroup task/info itemgroup info"><img class="- topic/image image" id="task_dxt_clt_32c__image_txy_mlt_32c" src="%E4%B8%B4%E5%BA%8A%E8%B7%AF%E5%BE%84/Contour_workflow/%E5%AF%BC%E5%87%BA.png"/></div>
+                </li></ol></section>
+        </div>
+    </article>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="topic-item"><a href="#task_byn_fdt_32c" data-tocid="task_byn_fdt_32c">一、工作流程</a></li><li class="topic-item"><a href="#task_txf_b2t_32c" data-tocid="task_txf_b2t_32c">二、勾画</a></li><li class="topic-item"><a href="#task_z1r_52t_32c" data-tocid="task_z1r_52t_32c">三、图像融合</a></li><li class="topic-item"><a href="#task_dxt_clt_32c" data-tocid="task_dxt_clt_32c">四、导出图像</a></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    本文档不可替代用户手册，由于版本和配置的差异可能存在与本文档描述不符的情况。本文档所涉及内容并非联影的承诺，可随时更改，恕不另行通知。由于描述性偏颇或使用本文档发生的附带损失，联影概不承担任何责任。
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

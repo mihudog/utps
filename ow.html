@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>OIS工作流程</title>
+	<style>
+		* {    
+            margin: 0;    
+            padding: 0;    
+            box-sizing: border-box;    
+        }    
+		body{
+			display:flex;
+			font-family:"Helvetica Neue",Arial,sans-serif;
+            background-color: #f4f4f4;    
+            color: #333;    
+		}
+		.sidebar{
+			width:20%;
+			background:linear-gradient(135deg, #1e3c72, #2a5298);   
+			color: #fff;
+			padding:10px;
+			height:100vh;
+			box-shadow:2px 0 5px rgba(0,0,0,0.1);
+			overflow-y: auto;
+			position: fixed;
+		}
+		.sidebar h1{
+			font-size: 24px;
+			margin-bottom: 20px;
+			text-align: center;
+			border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+			padding-bottom: 10px;
+		}
+		.sidebar h2{
+			font-size: 18px;
+			margin: 15px 0 5px 0;
+		}
+		.sidebar h3{
+			font-size: 16px;
+			margin: 15px 0 5px 20;
+		}
+		.sidebar a {
+			text-decoration:none;
+			color:#a8d0e6;
+			transition: color 0.3s,backgroud 0.3s;
+			display: block;
+			padding: 5px 15px;
+			border-radius: 4px;
+		}
+		.sidebar a:hover{
+			background: rgba(255,255,255,0.2);
+			color: #fff;
+			text-decoration:underline;
+		}
+		.content{
+			margin-left: 20%;
+			padding:30px;
+			flex-grow:1;
+			background-color: #fff;
+			min-height: 100vh;
+		}
+		.content h1{
+			font-size: 28px;
+			color: #2a5298;
+			margin-bottom: 20px;
+			border-bottom: 2px solid#e0e0e0;
+			padding-bottom: 10px;
+		}
+		.content h2{
+			font-size: 22px;
+			color: #1e3c72;
+			margin-top: 30px;
+			margin-bottom: 10px;
+		}
+		.content h3{
+			font-size: 18px;
+			color: #2a5298;
+
+		}
+		.content h4{
+			font-size: 16px;
+			color: #555;
+			margin-bottom: 12px;
+		}
+		.content ul {    
+            list-style-type: disc;    
+            margin-left: 20px;    
+            margin-bottom: 20px;    
+        }    
+    
+        .content li {    
+            margin-bottom: 10px;    
+        }    
+    
+        .content img {    
+            max-width: 90%;    
+            height: auto;    
+            margin-bottom: 20px;    
+            border-radius: 8px;    
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);    
+			cursor: pointer;
+			transition: transform 0.2s;
+        }    
+		.content img:hover{
+			transform: scale(1.02);
+		}
+        /* 表格样式 */    
+        .content table {    
+            width: 100%;    
+            border-collapse: collapse;    
+            margin-bottom: 20px;    
+        }    
+    
+        .content table, .content th, .content td {    
+            border: 1px solid #ddd;    
+        }    
+    
+        .content th, .content td {    
+            padding: 12px;    
+            text-align: center;    
+        }    
+    
+        .content th {    
+            background-color: #f2f2f2;    
+            color: #333;    
+        }    
+        .modal {    
+            display: none; /* 默认隐藏 */    
+            position: fixed;    
+            z-index: 1000;    
+            padding-top: 60px;    
+            left: 0;    
+            top: 0;    
+            width: 100%;    
+            height: 100%;    
+            overflow: auto;    
+            background-color: rgba(0,0,0,0.8);    
+        } 
+        .modal-content {    
+            margin: auto;    
+            display: block;    
+            max-width: 90%;    
+            max-height: 80%;    
+            border-radius: 8px;    
+            box-shadow: 0 2px 8px rgba(255,255,255,0.2);    
+            animation-name: zoom;    
+            animation-duration: 0.6s;    
+        }  
+		@keyframes zoom {    
+            from {transform: scale(0)}    
+            to {transform: scale(1)}    
+        }    
+        /* 关闭按钮 */    
+        .close {    
+            position: absolute;    
+            top: 30px;    
+            right: 35px;    
+            color: #fff;    
+            font-size: 40px;    
+            font-weight: bold;    
+            transition: color 0.3s;    
+            cursor: pointer;    
+        }
+		.close:hover,    
+        .close:focus {    
+            color: #bbb;    
+            text-decoration: none;    
+            cursor: pointer;    
+        }   
+        /* 响应式设计 */    
+        @media (max-width: 768px) {    
+            .sidebar {    
+                width: 100%;    
+                height: auto;    
+                position: relative;    
+            }    
+            .content {    
+                margin-left: 0;    
+            }    
+		}
+	</style>
+</head>
+<body>
+
+<div class="sidebar">
+	<h1><a href="index.html">回主页</a></h1>
+	<h1>OIS工作流程</h1>
+	<h2><a href="#section1">一、流程图</a></h2>
+	<h2><a href="#section2">二、流程节点</a></h2>
+	    <h3><a href="#section2-1">2.1患者登记</a></h3>
+		<h3><a href="#section2-2">2.2开定位申请单</a></h3>
+		<h3><a href="#section2-3">2.3制模/定位</a></h3>
+		<h3><a href="#section2-4">2.4勾画</a></h3>
+		<h3><a href="#section2-5">2.5开处方单</a></h3>
+		<h3><a href="#section2-6">2.6计划设计</a></h3>
+		<h3><a href="#section2-7">2.7医生评估计划</a></h3>
+		<h3><a href="#section2-8">2.8物理师批准计划</a></h3>
+		<h3><a href="#section2-9">2.9计划管理/计划传输</a></h3>
+		<h3><a href="#section2-10">2.10计划排程</a></h3>
+		<h3><a href="#section2-11">2.11治疗预约管理</a></h3>
+		<h3><a href="#section2-12">2.12患者签到</a></h3>
+		<h3><a href="#section2-13">2.13治疗叫号</a></h3>
+		<h3><a href="#section2-14">2.14添加治疗记录</a></h3>
+</div>
+<div class="content">
+		<h1 id = "section1">一、流程图</h1>
+			<img src="ois_workflow/w1.png" alt="使用RCT定位的信息化流程" class="zoomable">	
+			<h4 style="color:green">
+				<ul>
+					<li align="center">工作流程</li>
+				</ul>
+			</h4>		
+					
+		<h1 id = "section2">二、操作指导</h1>
+		
+			<h2 id="section2-1">2.1 ☞ 患者登记</h2>
+				<ul><h4>
+					<li>1.在<数据中心>点击新增，创建患者</li>
+					<li>2.输入患者信息</li>
+					<li>3.确认</li></ul>
+					<img src="ois_workflow/1.患者登记.png"   alt="患者登记" class="zoomable">
+				</h4></ul>
+			
+			<h2 id="section2-2">2.2 ☞ 开定位申请单</h2>
+				<ul><h4>
+					<li>1.打开医生日程，在<开定位申请单>节点选择患者，在操作区点<定位>，进入定位定位申请单页面</li>
+					<img src="ois_workflow/2.1进定位单1.PNG"   alt="进定位单" class="zoomable">
+					<li>2.加载模板</li>
+					<img src="ois_workflow/2.2加载定位单模板.png"   alt="加载定位单模板" class="zoomable">
+					<li>3.填写定位申请单，保存。 留意其中的必填项，固定装置等信息可在定位时由技师根据实际情况填写。</li></h4></ul>
+					<h5 style="color:green"><li>a.如果制模和定位在同一个房间同时进行，只需要填写定位设备和定位时间，不需要勾选制模</li>
+					<li>b.如果制模和定位分室操作，需要分别约时间，则需要勾选<是否制模>，并填写制模时间。</li></h5>
+					<img src="ois_workflow/2.3填写定位单.png"   alt="填写定位单" class="zoomable">
+				
+			
+			<h2 id="section2-3">2.3 ☞ 制模&定位</h2>
+				<ul><h4>
+					<li>1.在制模和定位环节，打开定位日程，选设备和日期</li>
+					<li>2.在左侧任务栏中选择患者，根据制模和定位的实际情况，在右侧的表单中填写<固定装置>等信息</li>
+					<li>3.点<定位确认></li>
+					<img src="ois_workflow/3.定位确认.png"   alt="加速器CT预热及患者制模" class="zoomable">
+				</h4></ul>	
+				
+			<h2 id="section2-4">2.4 ☞ 勾画</h2>
+				<ul><h4>
+					<li>1.打开医生日程，选择<勾画>节点</li>
+					<li>2.选择患者，在操作区选择<勾画>，进入该患者的勾画页面</li>
+					<img src="ois_workflow/4.1进入勾画.png"   alt="进入勾画" class="zoomable">
+					<li>3.勾画完成后，批准，批准后这个任务会流转到下个节点。 </li>
+					<h5><li style="color:green"> 也可以回到医生日程中的<勾画>节点，在任务上直接点<完成>。</li></h5>
+					<img src="ois_workflow/4.2.png"   alt="修改定位申请单" class="zoomable">
+					<img src="ois_workflow/4.3.png"   alt="修改定位申请单" class="zoomable">
+					<img src="ois_workflow/4.4.png"   alt="修改定位申请单" class="zoomable">
+				</h4></ul>
+			
+			<h2 id="section2-5">2.5 ☞ 开处方单</h2>
+				<ul><h4>
+					<li>1.在医生日程里，选择<确定治疗方案>节点，在操作区点<处方>进入计划申请单页面。如果有已存在且未批准的计划单，会给出弹窗提醒</li>
+					<img src="ois_workflow/5.1去开处方单.png"   alt="5.1去开处方单" class="zoomable">
+					<li>2.加载模板</li>
+					<img src="ois_workflow/5.2开处方单-加载模版.png"   alt="5.2 开处方单-加载模版" class="zoomable">
+					<li>3.选择治疗室</li>
+					<img src="ois_workflow/5.3添加治疗室.png"   alt="5.3添加治疗室" class="zoomable">
+					<li>4.修改/编辑靶区处方和剂量约束，其中约束参数可单独通过模板加载。编辑完成后，批准处方。</li>
+					<img src="ois_workflow/5.4开处方单-加载处方约束模&批准版.png"   alt="5.4开处方单-加载处方约束模&批准版" class="zoomable">
+				</h4></ul>
+
+				
+			<h2 id="section2-6">2.6 ☞ 计划设计</h2>
+				<h3 style="color:green">查看/打印处方单：</h3>
+					<img src="ois_workflow/6查看处方单.jpg"   alt="6查看处方单.jpg" class="zoomable">
+				<h3 style="color:green">在uTPS做计划：</h3>
+				<ul><h5>
+					<li>1.打开物理师日程，选择<计划设计>节点，选中患者</li>
+					<li>2.先把物理师选为自己（领用计划），再在操作区点<跳转计划>进入计划页面</li>
+					<img src="ois_workflow/6.1物理师日程-计划设计-跳转计划.png"   alt="6.1物理师日程-计划设计-跳转计划" class="zoomable">
+					<li>3.点添加计划，注意关联一个计划申请单</li>
+					<img src="ois_workflow/6.2物理师日程-添加计划-计划单.png"   alt="6.2物理师日程-添加计划-计划单" class="zoomable">
+					<li>4.计划做好后，回到物理师日程的<计划设计>节点，填写或修改该患者的治疗点、治疗室和技术类型等信息，点<设计完成>。</li>
+					<img src="ois_workflow/6.3物理师日程-计划设计-设计完成.png"   alt="6.3物理师日程-计划设计-设计完成" class="zoomable">
+				</h5></ul>
+				<h3 style="color:green">在第三方TPS里做计划：</h3>	
+					<h5><li>做完后在操作区点<设计完成></li></h5>
+					<img src="ois_workflow/6.4三方-计划设计-设计完成.png"   alt=6.4三方-计划设计-设计完成" class="zoomable">
+				
+			
+			<h2 id="section2-7">2.7 ☞ 医生评估计划</h2>
+				<h3 style="color:green">在uTPS里做的计划</h3>
+				<ul><h4>
+					<li>1.打开医生日程里的<评估计划>节点，选中患者，点<跳转评估>进入计划评估页面</li>
+					<img src="ois_workflow/7.1医生日程-跳转评估.png"   alt="7.1医生日程-跳转评估" class="zoomable">
+					<li>2.打开医生日程里的<评估计划>节点，选中患者，点<跳转评估>进入计划评估页面</li>
+					<img src="ois_workflow/7.2医生日程-评估计划-批准射束组.png"   alt="7.2医生日程-评估计划-批准射束组" class="zoomable">
+				</h4></ul>	
+				<h3 style="color:green">在其它TPS中做的计划</h3>
+					<ul><h4>去其它TPS中评估，评估通过后，在此节点中点<审核完成>。</h4></ul>
+					<img src="ois_workflow/7.3三方-批准射束组（审核完成）.png"   alt="7.3三方-批准射束组（审核完成）" class="zoomable">
+				<h3 style="color:green"><中止流程>可将患者流程中断，中断后可在<中止>节点恢复流程。</h3>
+
+			<h2 id="section2-8">2.8 ☞ 物理师批准计划</h2>
+				<h4 style="color:blue" align="center">医生评估通过的计划（在评估界面批准射束组后）会流转到物理师日程的<批准计划>节点。</h4>
+				<h3 style="color:green">在uTPS里做的计划：</h3>
+				<ul><h4>
+					<li>1.打开<计划批准>节点，选择患者，在操作区点<跳转评估>可进入患者的评估界面。</li>
+					<li>2.加载计划，审核无误后，点击批准计划</li>
+					<img src="ois_workflow/8.1物理师日程-计划批准-跳转评估.PNG"   alt="8.1物理师日程-计划批准-跳转评估" class="zoomable">
+					<li>3.(如果需要)，可在此界面打印计划报告</li>
+					<img src="ois_workflow/8.2打印计划报告.PNG"   alt="8.2打印计划报告.PNG" class="zoomable">
+					<li>4.回到<计划批准>节点，点<评估完成></li>
+					<img src="ois_workflow/8.3医生日程-评估完成.PNG"   alt="8.3医生日程-评估完成" class="zoomable">
+				</h4></ul>		
+				<h3 style="color:green">其它TPS做的计划：</h3>	
+				<h4><ul><li>去相应的系统中批准计划，在<计划批准>节点中相应患者的操作区点<评估完成></li>
+					<img src="ois_workflow/8.4三方-批准计划.PNG"   alt="8.4三方-批准计划.PNG" class="zoomable">
+				</ul></h4>
+			
+			<h2 id="section2-9">2.9 ☞ 计划管理/计划传输</h2>
+				<h4 style="color:blue" align="center">uTPS里的计划，在<计划批准>后，任务会流转到<计划管理>节点</h4>
+				<h4 style="color:blue" align="center">其它TPS的计划，任务会流转到<计划传输>节点</h4>
+				<h3 style="color:green">在uTPS里做的计划：</h3>	
+				<ul><h4>
+					<li>1.打开<计划管理>节点，选择患者，点<跳转计划管理>进入计划管理页面。</li>
+					<img src="ois_workflow/9.1物理师日程-计划管理-跳转计划管理.PNG"   alt="9.1物理师日程-计划管理-跳转计划管理.PNG" class="zoomable">
+					<li>2.如果需要提前添加IGRT射野，在此页面选中计划，点 I+，选择一张射野类型，确定。</li>
+					<img src="ois_workflow/9.X添加IGRTx.png"   alt="9.X添加IGRTx.png" class="zoomable">
+					<li>3.选中计划，批准确认</li>
+					<img src="ois_workflow/9.2计划管理-批准.PNG"   alt="9.2计划管理-批准.PNG" class="zoomable">
+				</h4></ul>
+				<h3 style="color:green">在其它TPS里做的计划：</h3>	
+				<ul><h4>
+					<li>1.在批准后（Plan Approval），需要在相应TPS中把RTPlan导出给uTPS。</li>
+					<li>2.打开<计划传输>节点，双击患者，导入，选择第三方TPS发来的RTPlan导入。 </li>
+					<img src="ois_workflow/9.3三方-导入三方计划.PNG"   alt="9.3三方-导入三方计划.PNG" class="zoomable">
+					<img src="ois_workflow/9.4三方-导入三方计划2.PNG"   alt="9.4三方-导入三方计划2.PNG" class="zoomable">
+					<li>3.如果只有一个已批准的处方单，导入的计划会自动跟它关联，此步骤可以跳过。如果有多个已批准的处方单，则需要回到<计划传输>节点，在此患者的操作区点<关联批准>，选择正确的处方单做关联。</li>
+					<img src="ois_workflow/9.6关联批准.png" alt="9.6关联批准.png" class="zoomable">
+				</h4></ul>
+
+			<h2 id="section2-10">2.10 ☞ 计划排程</h2>
+				<ul><h4>
+					<li>1.在<计划排程>节点，选中患者，点<跳转到计划排程>进入排程页面。</li>
+					<img src="ois_workflow/10.1计划排程-跳转治疗排程.png"   alt="医生审核" class="zoomable">
+					<li>2.创建治疗分次，选择治疗日期和时间。</li>
+						<h5 style="color:rgb(38, 0, 255)"><li>排程不是必要操作，在<预约管理>中也可以预约日期和时间。</li></h5>
+					<img src="ois_workflow/10.2排程选择时间.PNG"   alt="医生审核" class="zoomable"></imgsrc>
+				</h4></ul>
+			<h2 id="section2-11">2.11 ☞ 治疗预约管理</h2>
+				<ul><h4>
+					<li>1. 选择设备类型和名称。</li>
+					<li>2.若计划未排程，在<待预约日期>列里选择患者，拖到右侧日历栏中，选择治疗日期和时间</li>
+					<img src="ois_workflow/11.1预约日期.png"   alt="计划管理" class="zoomable">
+					<li>3.  - 若计划已排程，选择了日期但未选择时间，从<待预约时间>列里选择患者，拖到右侧日历栏的具体时间段中</li>
+					<img src="ois_workflow/11.2预约时间.png"   alt="计划管理" class="zoomable">
+				</h4></ul>
+			<h2 id="section2-12">2.12 ☞ 患者签到</h2>
+				<ul><h4>
+					<li>1.患者持身份证/二维码/条形码到签到机签到，签到机界面会显示签到成功。</li>
+				<table><tr>
+					<td><img src="ois_workflow/12.1签到.jpg"   alt="签到" class="zoomable"></td>
+					<td><img src="ois_workflow/12.2签到成功.png"   alt="签到成功" class="zoomable"></td>
+				</tr></table>
+					<li>2.患者需在可签到时间段签到才可成功签到</li>
+					<li>已签到的患者不可再次签到</li>
+				<table><tr>
+					<td><img src="ois_workflow/12.4不在预约时间.jpeg"   alt="12.4不在预约时间" class="zoomable"></td>
+					<td><img src="ois_workflow/12.3不能重复签到.png"   alt="12.3不能重复签到.png" class="zoomable"></td>
+				</tr></table>
+				</h4></ul>
+			<h2 id="section2-13">2.13 ☞ 排队叫号</h2>
+				<ul><h4>
+					<li>1.在左侧导航栏打开<排队叫号系统>的<诊室呼叫>页面。选择治疗室，可看到已预约、已签到、已呼叫三个列表。</li>
+					<img src="ois_workflow/13.1.png"   alt="13.1排队叫号-选择诊室呼叫" class="zoomable">
+					<li>2.已预约患者可在签到机上刷卡或扫码签到。工作人员也可以在已预约任务列表中选中患者点右键，为患者签到。签到后，患者从<已预约列表>进入<已签到列表>。</li>
+					<img src="ois_workflow/13.2.png"   alt="签到" class="zoomable">
+					<img src="ois_workflow/13.3.png"   alt="签到" class="zoomable">
+					<li>3.点〈下一个〉呼叫下一位患者。</li>
+					<img src="ois_workflow/13.5叫号-下一个.png"   alt="下一个" class="zoomable">
+					<li>4.右键点击已签到患者，选择退号，可将已签到患者退回到已预约列表；选择优先可把呼叫顺序排到第一位，此时签到序号上会带上优先标识。</li>
+					<img src="ois_workflow/13.4叫号-退号优先.png"   alt="13.4叫号-退号优先.png" class="zoomable">
+					<li>5.若患者长时间未进入治疗室，点〈过号〉，患者将回到已签到列表，并带上过号的标记。</li>
+					<img src="ois_workflow/13.6叫号-过号.png"   alt="过号" class="zoomable">
+					<li>6.治疗完成的患者，在〈已完成〉列表中显示为白色。</li>
+					<img src="ois_workflow/13.6叫号-治疗完成.png"   alt="13.6叫号-治疗完成.png" class="zoomable">
+					<li>7.已呼叫但未完成治疗的患者，在已完成列表中显示为橙色，可点姓名前的退回按钮将其退回到已签到。</li>
+					<img src="ois_workflow/13.7叫号-回退.png"   alt="签到" class="zoomable">
+					
+				</h4></ul>
+			<h2 id="section2-14">2.14 ☞ 添加治疗记录</h2>
+				<h3 style="color:green">  - 联影的机器会自动记录治疗信息，无需手动记录。其它机器需要双击当前患者添加治疗记录</h3>
+				<ul><h4>
+					<li>呼叫患者后，在当前呼叫的患者上双击，打开治疗记录，填写IGRT记录。</li>
+					<img src="ois_workflow/14.1打开治疗记录.jpg" alt="14.1打开治疗记录.jpg" class="zoomable">
+					<li>选择治疗完成的状态为<完成>，点<治疗确认>记录治疗信息。</li>
+					<img src="ois_workflow/14添加治疗记录.png" alt="添加治疗记录" class="zoomable">
+					<li>如果治疗中断，把中断的射野选为<未完成>状态，填写实际输出的MU，填写中断记录，点〈治疗中止〉。</li>
+					<li>点<治疗中止>，意思是本次治疗中断，记录中断时输出的MU，后续还可以打开，继续记录剩下的MU。</li>	
+					<img src="ois_workflow/14.2中断记录.png" alt="中断记录" class="zoomable">
+					<li>暂停治疗：在叫号列表中不再显示，在<预约管理>页面的日历中还在，并且会随时间顺延。可在日历中选中该患者，在工具栏中<恢复治疗>。</li>
+					<img src="ois_workflow/14.4暂停治疗.jpg" alt="暂停治疗" class="zoomable">
+					<li>终止治疗：停止该患者所有分次，取消排程，无法在<预约管理>中恢复。</li>
+					
+				</h4></ul>
+
+</div>
+
+<!-- 模态窗口 -->    
+<div id="imageModal" class="modal">    
+    <span class="close">&times;</span>    
+    <img class="modal-content" id="modalImage">    
+</div>    
+    
+<!-- JavaScript 用于模态功能 -->    
+<script>    
+    // 获取模态元素    
+    const modal = document.getElementById("imageModal");    
+    const modalImg = document.getElementById("modalImage");    
+    const closeBtn = document.getElementsByClassName("close")[0];    
+    
+    // 获取所有可点击的图片    
+    const images = document.querySelectorAll('.zoomable');    
+    
+    images.forEach(img => {    
+        img.addEventListener('click', function(){    
+            modal.style.display = "block";    
+            modalImg.src = this.src;    
+            modalImg.alt = this.alt;    
+        });    
+    });    
+    // 点击关闭按钮关闭模态    
+    closeBtn.onclick = function() {     
+        modal.style.display = "none";    
+    }    
+    // 点击模态窗口的任意位置（除图片外）关闭模态    
+    modal.onclick = function(event) {    
+        if (event.target == modalImg) {    
+            // 点击图片本身，不关闭    
+            return;    
+        }    
+        modal.style.display = "none";    
+    }    
+</script>    
+</body>
+</html>

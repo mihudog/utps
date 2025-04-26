@@ -1,0 +1,383 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>勾画和图像融合流程</title>
+	<style>
+		* {    
+            margin: 0;    
+            padding: 0;    
+            box-sizing: border-box;    
+        }    
+		body{
+			display:flex;
+			font-family:"Helvetica Neue",Arial,sans-serif;
+            background-color: #f4f4f4;    
+            color: #333;    
+		}
+		.sidebar{
+			width:20%;
+			background:linear-gradient(135deg, #1e3c72, #2a5298);   
+			color: #fff;
+			padding:10px;
+			height:100vh;
+			box-shadow:2px 0 5px rgba(0,0,0,0.1);
+			overflow-y: auto;
+			position: fixed;
+		}
+		.sidebar h1{
+			font-size: 24px;
+			margin-bottom: 20px;
+			text-align: center;
+			border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+			padding-bottom: 10px;
+		}
+		.sidebar h2{
+			font-size: 18px;
+			margin: 15px 0 5px 0;
+		}
+		.sidebar h3{
+			font-size: 16px;
+			margin: 15px 0 5px 20;
+		}
+		.sidebar a {
+			text-decoration:none;
+			color:#a8d0e6;
+			transition: color 0.3s,backgroud 0.3s;
+			display: block;
+			padding: 5px 15px;
+			border-radius: 4px;
+		}
+		.sidebar a:hover{
+			background: rgba(255,255,255,0.2);
+			color: #fff;
+			text-decoration:underline;
+		}
+		.content{
+			margin-left: 20%;
+			padding:30px;
+			flex-grow:1;
+			background-color: #fff;
+			min-height: 100vh;
+		}
+		.content h1{
+			font-size: 28px;
+			color: #2a5298;
+			margin-bottom: 20px;
+			border-bottom: 2px solid#e0e0e0;
+			padding-bottom: 10px;
+		}
+		.content h2{
+			font-size: 22px;
+			color: #1e3c72;
+			margin-top: 30px;
+			margin-bottom: 10px;
+		}
+		.content h3{
+			font-size: 18px;
+			color: #2a5298;
+
+		}
+		.content h4{
+			font-size: 16px;
+			color: #555;
+			margin-bottom: 10px;
+		}
+		.content ul {    
+            list-style-type: disc;    
+            margin-left: 20px;    
+            margin-bottom: 20px;    
+        }    
+    
+        .content li {    
+            margin-bottom: 8px;    
+        }    
+    
+        .content img {    
+            max-width: 100%;    
+            height: auto;    
+            margin-bottom: 20px;    
+            border-radius: 8px;    
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);    
+			cursor: pointer;
+			transition: transform 0.2s;
+        }    
+		.content img:hover{
+			transform: scale(1.02);
+		}
+        /* 表格样式 */    
+        .content table {    
+            width: 100%;    
+            border-collapse: collapse;    
+            margin-bottom: 20px;    
+        }    
+    
+        .content table, .content th, .content td {    
+            border: 1px solid #ddd;    
+        }    
+    
+        .content th, .content td {    
+            padding: 12px;    
+            text-align: center;    
+        }    
+    
+        .content th {    
+            background-color: #f2f2f2;    
+            color: #333;    
+        }    
+        .modal {    
+            display: none; /* 默认隐藏 */    
+            position: fixed;    
+            z-index: 1000;    
+            padding-top: 60px;    
+            left: 0;    
+            top: 0;    
+            width: 100%;    
+            height: 100%;    
+            overflow: auto;    
+            background-color: rgba(0,0,0,0.8);    
+        } 
+        .modal-content {    
+            margin: auto;    
+            display: block;    
+            max-width: 90%;    
+            max-height: 80%;    
+            border-radius: 8px;    
+            box-shadow: 0 2px 8px rgba(255,255,255,0.2);    
+            animation-name: zoom;    
+            animation-duration: 0.6s;    
+        }  
+		@keyframes zoom {    
+            from {transform: scale(0)}    
+            to {transform: scale(1)}    
+        }    
+        /* 关闭按钮 */    
+        .close {    
+            position: absolute;    
+            top: 30px;    
+            right: 35px;    
+            color: #fff;    
+            font-size: 40px;    
+            font-weight: bold;    
+            transition: color 0.3s;    
+            cursor: pointer;    
+        }
+		.close:hover,    
+        .close:focus {    
+            color: #bbb;    
+            text-decoration: none;    
+            cursor: pointer;    
+        }   
+        /* 响应式设计 */    
+        @media (max-width: 768px) {    
+            .sidebar {    
+                width: 100%;    
+                height: auto;    
+                position: relative;    
+            }    
+            .content {    
+                margin-left: 0;    
+            }    
+		}
+	</style>
+</head>
+<body>
+
+<div class="sidebar">
+	<h1><a href="index.html">回主页</a></h1>
+	<h1>勾画和图像融合工作流程</h1>
+	<h2><a href="#section1">一、工作流程</a></h2>
+	<h2><a href="#section2">二、勾画</a></h2>
+		<h3><a href="#section2-1">2.1双击加载图像</a></h3>
+		<h3><a href="#section2-2">2.2加载模板</a></h3>
+		<h3><a href="#section2-3">2.3用勾画工具勾画靶区</a></h3>
+		<h3><a href="#section2-4">2.4辅助勾画(投影幅值)</a></h3>
+		<h3><a href="#section2-5">2.5外扩内缩</a></h3>
+		<h3><a href="#section2-6">2.6关联更新</a></h3>
+		<h3><a href="#section2-7">2.7靶区自动勾画</a></h3>
+	<h2><a href="#section3">三、图像融合</a></h2>
+		<h3><a href="#section3-1">3.1导入MR图像序列</a></h3>
+		<h3><a href="#section3-2">3.2配准</a></h3>
+		<h3><a href="#section3-3">3.3双窗对照勾画</a></h3>
+		<h3><a href="#section3-4">3.4多视窗检查</a></h3>
+	<h2><a href="#section4">四、导出图像</a></h2>
+</div>
+<div class="content">
+
+			<div align="center">
+			<img src="Contour_workflow/QRcode.png" alt="二维码" class="zoomable">	
+						<h4 style="color:green">
+								<li align="center">扫码看短视频讲解</li>
+						</h4>
+			</div>			
+			
+	<h1 id = "section1">一、工作流程</h1>
+			<img src="Contour_workflow/Datatransmission.png" alt="数据传输流程" class="zoomable" >	
+			<h4 style="color:green">
+					<li align="center">数据传输流程</li>
+			</h4>
+			<img src="Contour_workflow/Contour.png" alt="勾画工作流程" class="zoomable">	
+			<h4 style="color:green">
+					<li align="center">勾画工作流程</li>
+			</h4>
+			<img src="Contour_workflow/FusionContour.png" alt="图像融合+勾画工作流程" class="zoomable">	
+			<h4 style="color:green">
+					<li align="center">图像融合+勾画工作流程</li>
+			</h4>
+			
+	<h1 id = "section2" >二、勾画</h1>
+		<h3><a href="tps_a00.html" target="_blank" style="color:blue">☞ 详细参考：勾画</a></h3>
+
+			<h2 id="section2-1">2.1 ☞ 双击加载图像</h2>
+			<ul><h4>
+				<li>1.选择患者，双击进入勾画界面</li>
+				<li>2.选择CT序列，双击加载图像</li>
+				<img src="Contour_workflow/加载图像.png"   alt="关联电子密度" class="zoomable">
+			</h4></ul>	
+			
+			<h2 id="section2-2">2.2 ☞ 调用模板做勾画</h2>
+			<ul><h4>
+				<li>1.点<加载模板></li>
+				<li>2.选择模板</li>
+				<li>3.确认后，系统会按模板指定的方式画出ROI，<智能分割支持>为"是"的ROI会自动画出来，"否"的则生成空结构。</li>
+				<li><函数支持>为"是"的ROI，会自动带上关联关系</li>
+				<img src="Contour_workflow/加载模板.png"   alt="关联电子密度" class="zoomable">
+			</h4></ul>	
+			
+			<h2 id="section2-3"><a href="tps_a05.html" target="_blank" style="color:blue">2.3 ☞ 用勾画工具勾画靶区</a></h2>
+			<ul><h4>
+				<li>推画，按键盘“+” “-”号缩放画刷的直径，按字母 A 可在同层做并行勾画</li>
+				<li>形变拖拽，可做"点线式"勾画，线条首尾相连闭合轮廓线，在线条上拖拽做局部修改</li>
+				<table><tr>
+				<td><img src="Contour_workflow/推画.gif"   alt="关联电子密度" class="zoomable"></td>
+				<td><img src="Contour_workflow/形变拖拽.gif"   alt="关联电子密度" class="zoomable"></td>
+				</tr></table>
+			</h4></ul>	
+			
+			<h2 id="section2-4">2.4 ☞ 辅助勾画</h2>
+			<ul><h4>
+				<li>1.激活辅助勾画</li>
+				<li>2.用勾画工具连续勾画两层，翻到第三层时会出现投影（会根据层间灰度变化自动形变）</li>
+				<li>3.按Q键将投影变为轮廓线，用<推画>或<形变拖拽>等工具修改轮廓</li>
+				<img src="Contour_workflow/辅助勾画.gif"   alt="关联电子密度" class="zoomable">
+			</h4></ul>	
+			
+			<h2 id="section2-5">2.5 ☞ 外扩内缩</h2>
+			<ul><h4>
+				<li>1.选择“外扩内缩”，图中两个地方都可以打开</li>
+				<li>2.选择1个"源"</li>
+				<li>3.设置外扩/内缩的数值</li>
+				<li>4.可选不进入（避开）某个结构，并设置间距</li>
+				<li>5.可选不超出皮肤，并设置缩进皮肤的间距</li>
+				<li>6.将修改结果生成新结构或覆盖到已存在的结构上</li>
+				<img src="Contour_workflow/外扩内缩.png"   alt="外扩内缩" class="zoomable">
+			</h4></ul>	
+			
+			<h2 id="section2-6">2.6 ☞ 关联更新</h2>
+			<ul><h4>
+				<li>ROI之间的逻辑关系可被保存在模板内，修改原结构后，关联结构可同步更新</li>
+				<img src="Contour_workflow/关联更新.png"   alt="更新" class="zoomable">
+			</h4></ul>	
+			<h2 id="section2-7">2.7 ☞ 靶区自动勾画</h2>
+			<ul><h4>
+				<li>注意部分靶区有参考依赖，如：鼻咽癌的CTV1/CTV2/两个GTVnd，都以来GTVnx，需要先手动把GTVnx画出来，才可自动画这4个靶区</li>
+				<img src="Contour_workflow/靶区参考.png"   alt="更新" class="zoomable">
+			</h4></ul>	
+	<h1 id="section3">三、图像融合</h1>
+			<h2 id="section3-1">3.1 ☞ 导入MR序列，方式一：从PACS查询获取</h2>
+			<ul><h4>
+				<li>0.需提前在PACS端添加我方AE信息，并开通Query/Retrieve权限</li>
+				<li>1.选择患者，双击，<导入></li>
+				<li>2.选择数据来源为<PACS>,选择PACS</li>
+				<li>3.按ID号或姓名检索患者。选择序列，移动序列</li>
+				<li>4.导入MR序列</li></ul>
+			</h4>
+				<img src="Contour_workflow/导入MR序列1.png"   alt="导入MR序列" class="zoomable">
+			</ul>	
+			<h2>  ☞ 导入MR序列，方式二：从其它系统发过来</h2>
+			<ul><h4>
+				<li>0.需在其它指定的系统添加我方AE信息，并把图像发过来</li>
+				<li>1.选择患者，双击，<导入></li>
+				<li>2.选择数据来源为<服务器></li>
+				<li>3.按ID号或姓名检索患者。选择序列，确定</li>
+				<li>4.选择患者信息，选择图像序列，导入</li>
+				<li>5.确认患者信息四要素（影像的检查号跟放疗的ID号不一定对应，需确认）</li>
+				</ul>
+			</h4>
+				<img src="Contour_workflow/导入MR序列2.png"   alt="导入MR序列" class="zoomable">
+			</ul>
+			<h2 id="section3-2">3.2 ☞ 配准</h2>
+				<ul><h4>
+					<li>1.进入<配准>页面</li>
+					<li>2.在CT序列上双击加载CT</li>
+					<li>3.选择一个MR序列，点右键，<添加为刚性配准>。系统会做一次自动配准。</li>
+					<li>4.如果配准效果不理想，可使用<平移>和<旋转>，手动粗调，让图像层面大致对齐，然后点<执行刚性>尝试让系统自动配准。也可手动精细调整做最终结果</li>
+					<li>·配准后的结果会实时保存</li>
+				</h4></ul>	
+
+			<img src="Contour_workflow/刚性配准.png" alt="刚性配准" class="zoomable" >
+			<img src="Contour_workflow/手动配准.gif"  alt="手动配准" class="zoomable" >
+
+			<h2 id="section3-3" >3.3 ☞ 对照勾画</h3>
+				<ul><h4>
+					<li>1.用<布局管理>调成2窗口对照，把混合窗的滑动条拉到左侧，只显示CT图像</li>
+					<li>2.添加ROI</li>
+					<li>3.使用勾画工具画靶区，此时主副图上的光标会同步显示</li>
+					<img src="Contour_workflow/双窗对照勾画.gif"   alt="加Mark点" class="zoomable">
+				</h4></ul>
+				
+			<h2 id="section3-4">3.4 ☞ 多视窗对照检查</h2>
+				<ul><h4>
+					<li>1.在<布局管理>中切换为多视窗显示</li>
+					<li>2.把配准关系拖到另外的视窗</li>
+					<li>3.在多视窗中切换MR序列</li>					
+				</h4></ul>
+					<img src="Contour_workflow/多视窗检查.gif"   alt="加Mark点" class="zoomable">
+	<h1 id="section4">四、导出图像</h1>
+				<ul><h4>
+					<li>1.切换到DICOM，导出</li>
+					<li>2.导出路径选择<PACS>，选择pinnacle</li>
+					<li>3.导出</li>			
+				</h4></ul>
+					<img src="Contour_workflow/导出.png"   alt="加Mark点" class="zoomable">
+</div>
+
+<!-- 模态窗口 -->    
+<div id="imageModal" class="modal">    
+    <span class="close">&times;</span>    
+    <img class="modal-content" id="modalImage">    
+</div>    
+    
+<!-- JavaScript 用于模态功能 -->    
+<script>    
+    // 获取模态元素    
+    const modal = document.getElementById("imageModal");    
+    const modalImg = document.getElementById("modalImage");    
+    const closeBtn = document.getElementsByClassName("close")[0];    
+    
+    // 获取所有可点击的图片    
+    const images = document.querySelectorAll('.zoomable');    
+    
+    images.forEach(img => {    
+        img.addEventListener('click', function(){    
+            modal.style.display = "block";    
+            modalImg.src = this.src;    
+            modalImg.alt = this.alt;    
+        });    
+    });    
+    // 点击关闭按钮关闭模态    
+    closeBtn.onclick = function() {     
+        modal.style.display = "none";    
+    }    
+    // 点击模态窗口的任意位置（除图片外）关闭模态    
+    modal.onclick = function(event) {    
+        if (event.target == modalImg) {    
+            // 点击图片本身，不关闭    
+            return;    
+        }    
+        modal.style.display = "none";    
+    }    
+</script>    
+</body>
+</html>

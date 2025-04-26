@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="set_d21">
+    <title>打印设置</title>
+    <shortdesc><image
+            href="%E5%BA%94%E7%94%A8%E8%AE%BE%E7%BD%AE/%E6%89%93%E5%8D%B0%E8%AE%BE%E7%BD%AE.png"
+            id="image_ohb_q2c_pwb"/></shortdesc>
+    <taskbody>
+        <context>
+            <p>这里所关联的模板在服务工具>报告模板中设置 </p>
+        </context>
+        <steps>
+            <step>
+                <cmd>点击进入打印关联设置</cmd>
+            </step>
+            <step>
+                <cmd>在相应单据类型下关联相应报告模板，</cmd>
+                <info>
+                    <p> 电子/质子/Tomo治疗单打印模板，打印时根据计划的辐射类型自动匹配治疗单 </p>
+                </info>
+            </step>
+            <step>
+                <cmd>保存</cmd>
+            </step>
+        </steps>
+    </taskbody>
+</task>

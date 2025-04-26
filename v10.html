@@ -1,0 +1,159 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="24.1">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="DC.rights.owner" content="(C) Copyright 2025"/><meta name="copyright" content="(C) Copyright 2025"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="task"/><meta name="description" content=""/><meta name="DC.relation" content="v00.html"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="v10"/>        
+      <title>图像融合</title><!--  Generated with Oxygen version 24.1, build number 2022041502.  --><meta name="wh-path2root" content=""/><meta name="wh-toc-id" content="v10-d1282e111"/><meta name="wh-source-relpath" content="../../WEB版重构文档/OxygenFile/v10.xml"/><meta name="wh-out-relpath" content="v10.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="./oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/app/topic-page.css?buildId=2022041502"/>
+    
+    
+    <script src="./oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="./oxygen-webhelp/app/topic-page.js" src="./oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/oxygen.css?buildId=2022041502"/><link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/notes.css?buildId=2022041502"/></head>
+
+    <body id="v10" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="index.html" class=" wh_logo d-none d-sm-block "><img src="Logo.png" alt="Web-Help"/></a>
+                    <div class=" wh_publication_title "><a href="index.html"><span class="title">Web-Help</span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="v00-d1282e11-mi" data-tocid="v00-d1282e11" data-state="not-ready" class=" topicref " data-id="v00"><span class="title"><a href="v00.html">短视频指南</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="ois_a00-d1282e283-mi" data-tocid="ois_a00-d1282e283" data-state="not-ready" class=" topicref " data-id="ois_a00"><span class="title"><a href="ois_a00.html">系统登录</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="ois_b00-d1282e378-mi" data-tocid="ois_b00-d1282e378" data-state="not-ready" class=" topicref " data-id="ois_b00"><span class="title"><a href="ois_b00.html">DICOM导入导出</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="ois_000-d1282e464-mi" data-tocid="ois_000-d1282e464" data-state="not-ready" class=" topicref " data-id="ois_000"><span class="title"><a href="ois_000.html">OIS系统</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_a00-d1282e744-mi" data-tocid="tps_a00-d1282e744" data-state="not-ready" class=" topicref " data-id="tps_a00"><span class="title"><a href="tps_a00.html">勾画</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_b00-d1282e932-mi" data-tocid="tps_b00-d1282e932" data-state="not-ready" class=" topicref " data-id="tps_b00"><span class="title"><a href="tps_b00.html">图像配准与融合</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_c00-d1282e1101-mi" data-tocid="tps_c00-d1282e1101" data-state="not-ready" class=" topicref " data-id="tps_c00"><span class="title"><a href="tps_c00.html">计划设计</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tps_e00-d1282e1355-mi" data-tocid="tps_e00-d1282e1355" data-state="not-ready" class=" topicref " data-id="tps_e00"><span class="title"><a href="tps_e00.html">计划评估</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="tds_b00-d1282e1463-mi" data-tocid="tds_b00-d1282e1463" data-state="not-ready" class=" topicref " data-id="tds_b00"><span class="title"><a href="tds_i00.html">计划QA</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="rvs_a00-d1282e1523-mi" data-tocid="rvs_a00-d1282e1523" data-state="not-ready" class=" topicref " data-id="rvs_a00"><span class="title"><a href="rvs_a00.html">RVS系统</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="app_000-d1282e1598-mi" data-tocid="app_000-d1282e1598" data-state="not-ready" class=" topicref " data-id="app_000"><span class="title"><a href="app_000.html">临床路径</a></span></span></li><li role="menuitem"><span id="tools-d1282e1623-mi" data-tocid="tools-d1282e1623" data-state="leaf" class=" topicref " data-id="tools"><span class="title"><a href="tools.html">工具和文档</a></span></span></li></ul></nav>
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="v00"><div class="title"><a href="v00.html">短视频指南</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li class="active"><div class="topicref" data-id="v10"><div class="title"><a href="v10.html">图像融合</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="v00-d1282e11" class="topicref" data-id="v00" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action v00-d1282e11-link" class="wh-expand-btn"></span><div class="title"><a href="v00.html" id="v00-d1282e11-link">短视频指南</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="v01-d1282e21" class="topicref" data-id="v01" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v01.html" id="v01-d1282e21-link">系统构成和设置</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v01-d1282e31" class="topicref" data-id="v01" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v02.html" id="v01-d1282e31-link">DICOM导入和导出</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v01-d1282e41" class="topicref" data-id="v01" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v03.html" id="v01-d1282e41-link">图像浏览</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v01-d1282e51" class="topicref" data-id="v01" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v04.html" id="v01-d1282e51-link">勾画和图像融合</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v05-d1282e61" class="topicref" data-id="v05" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v05.html" id="v05-d1282e61-link">界面介绍</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v06-d1282e71" class="topicref" data-id="v06" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v06.html" id="v06-d1282e71-link">智能勾画</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v07-d1282e81" class="topicref" data-id="v07" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v07.html" id="v07-d1282e81-link">勾画工具</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v08-d1282e91" class="topicref" data-id="v08" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v08.html" id="v08-d1282e91-link">勾画模板</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v09-d1282e101" class="topicref" data-id="v09" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v09.html" id="v09-d1282e101-link">ROI编辑</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem" class="active"><div data-tocid="v10-d1282e111" class="topicref" data-id="v10" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v10.html" id="v10-d1282e111-link">图像融合</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v11-d1282e122" class="topicref" data-id="v11" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v11.html" id="v11-d1282e122-link">形变配准</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v12-d1282e132" class="topicref" data-id="v12" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v12.html" id="v12-d1282e132-link">4DCT上勾画靶区</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v13-d1282e142" class="topicref" data-id="v13" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v13.html" id="v13-d1282e142-link">计划设计步骤速览</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v16-d1282e152" class="topicref" data-id="v16" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v16.html" id="v16-d1282e152-link">IMRT计划设计</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v14-d1282e162" class="topicref" data-id="v14" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v14.html" id="v14-d1282e162-link">uArc计划设计</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v17-d1282e172" class="topicref" data-id="v17" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v17.html" id="v17-d1282e172-link">3DCRT计划设计</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v18-d1282e182" class="topicref" data-id="v18" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v18.html" id="v18-d1282e182-link">计划评估</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v15-d1282e192" class="topicref" data-id="v15" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v15.html" id="v15-d1282e192-link">在线ART流程</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v19-d1282e202" class="topicref" data-id="v19" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v19.html" id="v19-d1282e202-link">计划管理与排程</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v20-d1282e212" class="topicref" data-id="v20" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v20.html" id="v20-d1282e212-link">计划停用与解批</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v21-d1282e222" class="topicref" data-id="v21" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v21.html" id="v21-d1282e222-link">QA模体数据管理</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v22-d1282e233" class="topicref" data-id="v22" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v22.html" id="v22-d1282e233-link">模体QA计划</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v22-d1282e243" class="topicref" data-id="v22" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v23.html" id="v22-d1282e243-link">怎样查看图像引导记录</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v22-d1282e253" class="topicref" data-id="v22" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v24.html" id="v22-d1282e253-link">调强放疗放疗是怎样实现的</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v22-d1282e263" class="topicref" data-id="v22" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v25.html" id="v22-d1282e263-link">自动计划</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li><li role="treeitem"><div data-tocid="v22-d1282e273" class="topicref" data-id="v22" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="v26.html" id="v22-d1282e273-link">怎样删除图像序列</a><div class="wh-tooltip"><p class="shortdesc"></p></div></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="- topic/title title topictitle1" id="ariaid-title1">图像融合</h1>
+    
+    <div class="- topic/body task/taskbody body taskbody"><p class="- topic/shortdesc shortdesc"></p>
+        <section class="- topic/section task/context section context">
+            <p class="- topic/p p"><div class="embed-responsive embed-responsive-16by9"><video class="video embed-responsive-item" controls="controls"><source src="PWSvideo/A6%20%E5%9B%BE%E5%83%8F%E8%9E%8D%E5%90%88.mp4"/></video></div></p>
+        </section>
+        <section class="- topic/ol task/steps ol steps"><div class="- topic/ol task/steps ol steps"><div class="- topic/li task/step li step p">
+                <span class="- topic/ph task/cmd ph cmd"></span><br/>
+            </div></div></section>
+    </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    本文档不可替代用户手册，由于版本和配置的差异可能存在与本文档描述不符的情况。本文档所涉及内容并非联影的承诺，可随时更改，恕不另行通知。由于描述性偏颇或使用本文档发生的附带损失，联影概不承担任何责任。
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>
